@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>임현진 — 개발자 포트폴리오</title>
-<meta name="description" content="규제·도메인 특화 B2B SaaS 풀스택 개발자 임현진의 프로젝트 포트폴리오.">
+<meta name="description" content="4대보험·급여·건설노무 도메인 B2B SaaS 풀스택 개발자 임현진의 프로젝트 포트폴리오.">
 <style>
   :root{
     --paper:#EEF0F2; --panel:#FFFFFF; --ink:#14202C; --muted:#5A6B7A;
@@ -46,7 +46,7 @@
   .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
   .hero h1{font-size:clamp(30px,5vw,46px);font-weight:700;letter-spacing:-.02em;margin-bottom:8px;}
   .hero .role{font-family:var(--mono);font-size:14px;color:var(--muted);margin-bottom:26px;letter-spacing:.02em;}
-  .hero .thesis{font-size:clamp(20px,3.2vw,27px);font-weight:700;line-height:1.4;letter-spacing:-.01em;text-wrap:balance;max-width:22ch;}
+  .hero .thesis{font-size:clamp(20px,3.2vw,27px);font-weight:700;line-height:1.4;letter-spacing:-.01em;text-wrap:balance;max-width:24ch;}
   .hero .thesis em{font-style:normal;color:var(--accent);}
   .hero .lead{margin-top:20px;color:var(--muted);max-width:var(--measure);font-size:16.5px;}
 
@@ -101,6 +101,7 @@
   .stack-col.d .lbl{color:var(--warn);}
   .chips{display:flex;flex-wrap:wrap;gap:7px;}
   .chip{font-family:var(--mono);font-size:12.5px;padding:4px 10px;background:var(--paper);border:1px solid var(--rule);}
+  .stack-note{font-size:13px;color:var(--muted);margin-top:14px;}
 
   /* contact */
   .contact{background:var(--ink);color:var(--paper);padding:44px 40px;margin-top:64px;}
@@ -124,27 +125,27 @@
   <header class="hero">
     <div class="kicker">Backend · Full-stack Developer</div>
     <h1>임현진</h1>
-    <div class="role">3년차 · SvelteKit / TypeScript / C#</div>
-    <p class="thesis">설치형 데스크톱 프로그램을 <em>웹 서비스</em>로 전환하며 시작해, 정부기관 연동·결제·사내 서비스를 만들어왔습니다.</p>
-    <p class="lead">4대보험·급여·건설 노무 분야의 B2B SaaS를 3년간 개발했습니다. 신입 때 맡은 레거시 웹 전환 프로젝트를
-      지금까지 주도하고 있고, 정부기관 사이트 자동화(C#·Puppeteer)와 결제 연동, 신규 서비스 단독 구축 등을 담당했습니다.</p>
+    <div class="role">3년차 · 4대보험·급여·건설노무 도메인 / 정부기관 연동 자동화</div>
+    <p class="thesis">숫자 하나 틀리면 실제 피해로 이어지는 도메인에서, <em>3년 3개월째</em> 개발하고 있습니다.</p>
+    <p class="lead">레거시 데스크톱 프로그램을 웹으로 옮기는 일부터 맡아 지금까지 주도하고 있고, 정부기관 사이트 자동화·결제 연동·신규 서비스
+      단독 구축까지 서비스 전 구간을 다뤘습니다. 같은 사람이 3년 넘게 붙어 있었던 덕분에, 이 도메인에서 한 번쯤 터지는 예외 케이스는 대부분 겪어봤습니다.</p>
 
     <div class="metrics">
-      <div class="metric"><div class="v">3년 3개월</div><div class="k">비즈웍스 재직 · 첫 직장</div></div>
+      <div class="metric"><div class="v">3년 3개월</div><div class="k">비즈웍스 재직 중</div></div>
       <div class="metric"><div class="v">21,671</div><div class="k">보수총액 신고 처리 (2025년도)</div></div>
       <div class="metric"><div class="v">1,111</div><div class="k">공무링크 커밋 (전체의 57%)</div></div>
       <div class="metric"><div class="v">3건</div><div class="k">0→1 단독 구축 (커밋 100%)</div></div>
-      <div class="metric"><div class="v">8</div><div class="k">회사 7 + 개인 1 프로젝트</div></div>
+      <div class="metric"><div class="v">5+</div><div class="k">정부기관·외부 시스템 연동(EDI·PG 등)</div></div>
     </div>
   </header>
 
   <section>
     <h2>핵심 역량</h2>
     <div class="str-grid">
-      <div class="str"><div class="t">외부 시스템 연동</div><div class="d">근로복지공단 토탈서비스·기관 EDI·팝빌·알리고·PG. 문서가 부실하고 예고 없이 바뀌는 시스템을 견디는 내성 설계.</div></div>
-      <div class="str"><div class="t">급여·4대보험 도메인 로직</div><div class="d">갑근세·주민세 계산, 4대보험, 보수총액신고 등 급여·노무 분야의 계산·신고 로직을 3년간 다뤘습니다.</div></div>
-      <div class="str"><div class="t">0→1 단독 구축</div><div class="d">신규 프로젝트 3건을 커밋 100%로, 인증·Docker·nginx·PM2·테스트·배포까지 혼자 세팅.</div></div>
-      <div class="str"><div class="t">검증 습관</div><div class="d">개인 프로젝트에도 테스트를 작성하고, 회사 프로젝트에서도 Playwright E2E 테스트를 구비했습니다.</div></div>
+      <div class="str"><div class="t">정부기관·외부 시스템 연동</div><div class="d">근로복지공단 토탈서비스·기관 EDI·팝빌·알리고·PG를 직접 붙였습니다. 문서가 부실하고 예고 없이 바뀌는 사이트에서, 한 건 실패가 전체로 안 번지게 만드는 게 항상 관건이었습니다.</div></div>
+      <div class="str"><div class="t">급여·4대보험 도메인 로직</div><div class="d">갑근세·주민세 계산, 4대보험, 보수총액신고 — 틀리면 바로 민원으로 돌아오는 계산·신고 로직을 3년간 다뤘습니다.</div></div>
+      <div class="str"><div class="t">로컬 에이전트 ↔ 웹 통신</div><div class="d">정부기관 사이트는 서버 원격 자동화가 안 돼서, PC 상주 로컬 에이전트(C#)를 직접 설계해 웹과 통신시켰습니다. 3년째 운영 중입니다.</div></div>
+      <div class="str"><div class="t">신규 서비스 단독 구축</div><div class="d">3건을 커밋 100% 단독으로 — 인증부터 배포까지 전부 혼자 결정하고 세팅했습니다.</div></div>
     </div>
   </section>
 
@@ -155,21 +156,23 @@
       <div class="proj-head"><h3>공무링크</h3><span class="when">2023.06 ~ 현재</span></div>
       <p class="tagline">건설 노무·행정 자동화 SaaS — 레거시 VB 데스크톱을 SvelteKit 풀스택 웹으로 전환한 회사 주력 제품.</p>
       <div class="badges">
-        <span class="badge big">커밋 1,111 (57%, 1위)</span>
+        <span class="badge big">커밋 1,111 (57%)</span>
         <span class="badge">SvelteKit · MariaDB</span>
         <span class="badge">Docker · nginx · PM2</span>
         <span class="badge">Playwright E2E</span>
       </div>
       <ul>
-        <li><b>첫 3개월 단독 개발</b>로 초기 아키텍처 구축, 이후 2인 체제로 3년간 개발·운영</li>
+        <li>첫 3개월은 혼자 초기 아키텍처를 잡았고, 이후 2인 체제로 3년째 개발·운영</li>
         <li>담당: 정부기관 연동 · 근태·출퇴근 · 퇴직공제 전자카드 · 문서 출력(PDF/Excel/Word)</li>
-        <li>현재 회원사 335곳, 사무대행기관 10곳 사용 중</li>
-        <li>무료 도구의 URL이 한글 도메인+한글 경로 이중 인코딩으로 공유가 깨지는 문제를 발견해, 별도 영문 도메인 사이트를 단독으로 분리 구축</li>
+        <li>현재 회원사 335곳, 사무대행기관 10곳이 사용 중</li>
+        <li>무료 도구의 URL이 한글 도메인+경로 이중 인코딩으로 공유가 깨지는 걸 발견해, 영문 도메인 사이트를 따로 분리해 해결</li>
       </ul>
-      <div class="highlight"><b>장시간 자동화 작업의 타임아웃 해결</b> — 50~150명 일괄 처리 시 웹 요청이 5분을 넘겨 끊기는 문제를,
-        <b>작업 ID 발급 + 진행률 폴링</b>의 비동기 구조로 전환해 응답 대기와 작업 시간을 분리했습니다.</div>
-      <div class="highlight"><b>신규(2026.09) — 무료 서비스를 구독형 과금 체계로 전환</b> — Free/Lite/Pro/Max 4단계 모델로 전환하는
-        프로젝트에 정책 설계 단계부터 참여했습니다. 기능별 등급 게이트를 프론트·서버 양쪽에 구현하고, 계좌이체 결제(PayREST 연동)·
+      <div class="highlight"><b>로컬 에이전트와의 통신이 끊기는 문제</b> — 50~150명을 한 번에 처리시키면, 로컬 에이전트(공무헬퍼)가 끝날 때까지
+        브라우저가 하나의 요청으로 기다리는 구조라 5분을 넘기면 연결이 끊겼습니다. 클라이언트에서 작업 ID를 발급하고 2초 간격으로 처리 건수를
+        물어보는 폴링으로 바꿔, 에이전트는 백그라운드에서 계속 처리하고 화면은 진행 상황만 따로 조회하도록 분리했습니다. WebSocket 대신 폴링을
+        택한 건, 에이전트가 단순 HttpListener 기반이라 실시간 연결을 새로 얹기보다 그게 더 실용적이었기 때문입니다.</div>
+      <div class="highlight"><b>신규(2026.09) — 무료 서비스를 구독형 과금 체계로 전환</b> — Free/Lite/Pro/Max 4단계 모델로 바꾸는
+        작업에 가격·등급 구성 단계부터 참여했습니다. 기능별 등급 게이트를 프론트·서버 양쪽에 걸고, 계좌이체 결제(PayREST 연동)·
         구독 만료 임박 안내(D-7/D-3/D-1)·유료 고객 관리 화면까지 만들었습니다.</div>
     </div>
 
@@ -184,8 +187,9 @@
       </div>
       <ul>
         <li>정부 사이트는 인증서·보안모듈 때문에 서버 원격 자동화가 불가능 → <b>사용자 PC에 상주하는 에이전트</b>로 해결</li>
-        <li>외부 사이트 변경 내성 설계: 부분 실패 격리 · 부분 일치 셀렉터 · 팝업을 예외 아닌 분기로 흡수 · 타임아웃 차등</li>
+        <li>지금 보면 셀렉터를 XPath로 하드코딩한 곳이 많아 사이트 개편에 취약한 구조인데, 당시엔 오류 원인을 빠르게 알 수 있는 메시지를 남기는 쪽으로 방어선을 잡았습니다</li>
         <li>Chromium 미설치 시 자동 다운로드로 설치 마찰 제거</li>
+        <li>3년 넘게 운영하며 정부기관 신고 업무를 실제로 대신 처리 중</li>
       </ul>
     </div>
 
@@ -199,9 +203,9 @@
         <span class="badge">Service / Repository 분리</span>
       </div>
       <ul>
-        <li><b>2025년도 보수총액 신고 21,671건</b>을 신고 시즌 동안 처리</li>
-        <li>복잡한 법정 신고서를 <b>7단계 위저드로 재설계</b>해 비전문가도 자력 제출 가능하게 구성</li>
-        <li>레거시를 승계한 기존 제품과 달리, 신규 프로젝트에 맞는 레이어 구조를 새로 설계</li>
+        <li><b>2025년도 보수총액 신고 21,671건</b>이 이 서비스를 거쳐 처리됨</li>
+        <li>복잡한 법정 신고서를 <b>7단계 위저드로 재설계</b>해 비전문가도 혼자 제출할 수 있게 구성</li>
+        <li>레거시를 승계한 다른 제품과 달리, 이번엔 Service/Repository 레이어를 분리해 새로 설계</li>
       </ul>
     </div>
   </section>
@@ -214,13 +218,12 @@
       <p class="tagline">건설 일용직 근로자용 모바일 앱 — 구글 플레이·앱스토어 출시. NFC 출퇴근·안전점검·전자계약·급여조회.</p>
       <div class="badges">
         <span class="badge lead">커밋 210 (46%)</span>
-        <span class="badge">163 파일</span>
         <span class="badge">SvelteKit</span>
         <span class="badge">스토어 출시</span>
       </div>
       <ul>
         <li>담당: <b>앱 내부 기능 개발</b> — 출퇴근 체크·급여 조회·전자 근로계약·QR 무가입 진입 화면, 서버 DB 접근 레이어·체크리스트 저장 API</li>
-        <li>디지털에 익숙하지 않은 현장 근로자를 위해 <b>로그인 없이 근태를 찍는 QR 진입 경로</b>를 별도 설계</li>
+        <li>사용하는 사람들이 디지털에 익숙하지 않은 현장 근로자여서, 앱 설치·회원가입 자체가 장벽이었습니다. <b>QR로 로그인 없이 근태를 찍는 진입 경로</b>를 따로 설계한 이유입니다</li>
       </ul>
       <p class="note">Capacitor 셸 구성 및 스토어 심사는 동료가 담당했습니다.</p>
     </div>
@@ -234,15 +237,14 @@
         <span class="badge">OpenAPI</span>
       </div>
       <ul>
-        <li>PG 결제 연동, 포인트 시스템, 상품 판매(전자계약·팩스·NFC 태그), 주문 관리</li>
-        <li>최근 공무링크 요금제 결제 페이지를 연동 — 독립 프로젝트가 아니라 주력 제품의 결제 흐름으로 계속 확장 중</li>
-        <li>결제 결과를 서버에서 검증하도록 처리</li>
+        <li>키움페이 PG API 연동, 포인트 시스템, 상품 판매(전자계약·팩스·NFC 태그), 주문 관리</li>
+        <li>최근 공무링크 요금제 결제 페이지를 연동 — 독립 프로젝트가 아니라 주력 제품의 결제 흐름으로 계속 넓어지는 중</li>
       </ul>
     </div>
 
     <div class="proj">
       <div class="proj-head"><h3>건설HR</h3><span class="when">2026.06 ~ 현재 · 단독</span></div>
-      <p class="tagline">신규 서비스를 0에서 배포 가능한 상태까지 단독 구축 중.</p>
+      <p class="tagline">신규 서비스를 0부터 배포 가능한 상태까지 혼자 구축 중.</p>
       <div class="badges">
         <span class="badge solo">커밋 100% 단독</span>
         <span class="badge">JWT 인증</span>
@@ -257,16 +259,7 @@
 
     <div class="proj">
       <div class="proj-head"><h3>스마트체크리스트 (똑첵)</h3><span class="when">2025.01 ~ 현재</span></div>
-      <p class="tagline">NFC 태그 기반 현장 안전점검 체크리스트 시스템.</p>
-      <div class="badges">
-        <span class="badge lead">커밋 53% (1위)</span>
-        <span class="badge">API 키 인증</span>
-        <span class="badge">Playwright E2E</span>
-      </div>
-      <ul>
-        <li>담당: DB 레이어 및 API 엔드포인트 (점검 완료 처리·사원 관리·전송)</li>
-        <li>초기 버전을 설계·구축한 뒤 인수인계했다가 현재 다시 담당</li>
-      </ul>
+      <p class="tagline">NFC 태그 기반 현장 안전점검 체크리스트 시스템. DB 레이어·API 엔드포인트 담당, 초기 버전 구축 후 인수인계했다가 다시 담당.</p>
     </div>
   </section>
 
@@ -275,7 +268,7 @@
 
     <div class="proj flag">
       <div class="proj-head"><h3>ddalkkak — 두뇌 퍼즐 웹게임</h3><span class="when">SvelteKit</span></div>
-      <p class="tagline">숨은 규칙을 발견하는 순간의 쾌감을 노린 퍼즐 게임.</p>
+      <p class="tagline">회사 밖에서 뭔가 끝까지 운영해보고 싶어서 시작한 퍼즐 게임.</p>
       <div class="badges">
         <span class="badge">Svelte 5</span>
         <span class="badge">Vitest</span>
@@ -292,6 +285,13 @@
   <section>
     <h2>기술 스택</h2>
     <div class="stack">
+      <div class="stack-col d">
+        <div class="lbl">도메인</div>
+        <div class="chips">
+          <span class="chip">4대보험</span><span class="chip">급여·노무</span><span class="chip">전자계약</span>
+          <span class="chip">건설 행정</span><span class="chip">정부기관 EDI</span>
+        </div>
+      </div>
       <div class="stack-col p">
         <div class="lbl">주력 · 3년 실무</div>
         <div class="chips">
@@ -307,14 +307,8 @@
           <span class="chip">Vitest</span><span class="chip">Playwright</span><span class="chip">JWT</span>
         </div>
       </div>
-      <div class="stack-col d">
-        <div class="lbl">도메인</div>
-        <div class="chips">
-          <span class="chip">4대보험</span><span class="chip">급여·노무</span><span class="chip">전자계약</span>
-          <span class="chip">건설 행정</span><span class="chip">정부기관 EDI</span>
-        </div>
-      </div>
     </div>
+    <p class="stack-note">React·Vue 실무 경험은 없습니다. 다만 SvelteKit도 컴포넌트·반응형 상태 모델을 다루는 점은 같아서, 전환에 필요한 건 문법이지 사고방식은 아니라고 보고 있습니다.</p>
   </section>
 
   <div class="contact">
@@ -329,8 +323,6 @@
   <p class="foot">임현진 · 인하대학교 화학공학과 · 갱신 2026.09</p>
 
 </div>
-
-
 
 </body>
 </html>
