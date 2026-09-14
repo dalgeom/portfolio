@@ -122,8 +122,8 @@
       풀어낸 문제들을 정리했습니다.</p>
 
     <div class="metrics">
-      <div class="metric"><div class="v">3</div><div class="k">아래 정리한 프로젝트</div></div>
-      <div class="metric"><div class="v">22곳</div><div class="k">같은 결함이 복제돼 있던 호출부</div></div>
+      <div class="metric"><div class="v">21,671건</div><div class="k">보수총액 신고, 이 서비스를 거쳐 처리</div></div>
+      <div class="metric"><div class="v">52개</div><div class="k">단독 구축 로컬 에이전트 자동화 엔드포인트</div></div>
       <div class="metric"><div class="v">98.2%</div><div class="k">서비스워커 설치 용량 절감</div></div>
       <div class="metric"><div class="v">300건</div><div class="k">운영 데이터로 직접 대조 검증</div></div>
     </div>
@@ -133,6 +133,22 @@
     "이 조건에서만 안 된다"로 바꾸고 나면, 원인은 대체로 코드 안에 이미 있습니다. 그리고 한 곳을 고칠 땐
     같은 실수가 다른 곳에도 있는지부터 확인합니다 — 아래 사례 중 하나(공무링크)는 정확히 그래서 22곳을
     한꺼번에 고친 경우입니다.</p>
+
+  <section class="proj-block">
+    <h2>공무헬퍼<span class="dot">.</span></h2>
+    <p class="overview">정부기관 사이트·설치형 프로그램은 인증서·보안모듈 때문에 서버에서 원격 자동화가 불가능합니다. 사용자 PC에 상주하며 웹의 명령을 받아 대신 조작하는 로컬 에이전트를 C#으로 단독 설계·구현했습니다(52개 자동화 엔드포인트, 3년째 운영).</p>
+
+    <div class="case">
+      <div class="case-tag">아키텍처 판단 · 공무링크 연동</div>
+      <h4>로컬 에이전트와의 통신이 5분에서 끊겼다</h4>
+      <p>50~150명을 한 번에 자동화 처리시키면, 에이전트가 끝낼 때까지 브라우저가 단일 요청으로 대기하는 구조라 5분을 넘기면 연결이 끊겼습니다. 클라이언트가 작업 ID를 발급하고 2초 간격으로 진행 건수만 조회하는 폴링으로 바꿔, 에이전트는 백그라운드에서 계속 처리하고 화면은 상태만 따라가게 했습니다.</p>
+      <p>WebSocket 대신 폴링을 택한 건, 에이전트가 단순 HttpListener 기반이라 실시간 연결 계층을 새로 얹는 비용 대비 이득이 없다고 판단했기 때문입니다.</p>
+      <div class="highlight"><b>결과</b> 150명 이상 규모의 일괄 처리가 이 구조로 운영되고 있습니다</div>
+      <div class="case-foot">
+        <span class="badge">아키텍처 트레이드오프</span>
+      </div>
+    </div>
+  </section>
 
   <section class="proj-block">
     <h2>공무링크<span class="dot">.</span></h2>
