@@ -8,116 +8,105 @@
 <meta property="og:title" content="임현진 — 개발자 포트폴리오">
 <meta property="og:description" content="4대보험·급여·건설노무 도메인 개발자 임현진의 프로젝트와 문제 해결 기록.">
 <meta property="og:type" content="website">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
 <style>
   :root{
-    --paper:#EEF0F2; --panel:#FFFFFF; --ink:#14202C; --muted:#5A6B7A;
-    --rule:#D3DAE0; --rule-soft:#E3E8EC;
-    --accent:#0E5C7F; --accent-soft:#E2EDF3;
-    --good:#136F53; --good-soft:#E1F0EA;
-    --warn:#8A5A00; --warn-soft:#F6EEDC;
-    --bad:#A33B3B; --bad-soft:#F7E7E7;
-    --sans:"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    --mono:ui-monospace,"Cascadia Mono","Consolas","D2Coding","SFMono-Regular",Menlo,monospace;
-    --measure:70ch; --wide:900px;
+    --ink:#161A20; --muted:#666D78; --rule:#E7E9EC; --paper:#fff;
+    --accent:#2E5DE0; --accent-soft:#EEF2FD;
+    --bad:#B23B3B; --bad-soft:#FBEDED;
+    --warn:#9A6B00; --warn-soft:#FBF3E2;
+    --good:#137A55; --good-soft:#E7F5EF;
   }
-  @media (prefers-color-scheme:dark){
-    :root{
-      --paper:#0F1519; --panel:#161E24; --ink:#E6ECF0; --muted:#8FA0AE;
-      --rule:#26313A; --rule-soft:#1E272E;
-      --accent:#4FA8CE; --accent-soft:#13303D;
-      --good:#3DBF97; --good-soft:#11302A; --warn:#D9A441; --warn-soft:#2E2515;
-      --bad:#E08080; --bad-soft:#341C1C;
-    }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:0 28px 110px;
+    font-family:"Pretendard Variable","Pretendard","Apple SD Gothic Neo","Malgun Gothic",-apple-system,sans-serif;
+    color:var(--ink); background:var(--paper);
+    font-size:16.5px; line-height:1.75; -webkit-font-smoothing:antialiased;
+    letter-spacing:-.003em;
   }
-  body{background:var(--paper);color:var(--ink);font-family:var(--sans);
-    font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;}
-  .wrap{max-width:var(--wide);margin:0 auto;padding:0 24px 100px;}
+  .page{ max-width:720px; margin:0 auto; }
+  .dot{color:var(--accent);}
 
-  /* hero */
-  .hero{padding:68px 0 32px;border-bottom:2px solid var(--ink);margin-bottom:48px;}
-  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
-  .hero h1{font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-.02em;margin-bottom:8px;}
-  .hero .role{font-family:var(--mono);font-size:14px;color:var(--muted);margin-bottom:22px;letter-spacing:.02em;}
-  .hero .lead{color:var(--muted);max-width:var(--measure);font-size:16px;}
-  .hero .lead a{color:var(--accent);}
+  header.hero{ padding-top:56px; margin-bottom:52px; }
+  h1{font-size:38px; margin:6px 0 8px; letter-spacing:-.025em; font-weight:800; line-height:1.2;}
+  .role{font-size:15.5px; color:var(--muted); margin-bottom:18px; font-weight:500;}
+  .lead{font-size:16.5px; color:#333; max-width:100%; margin-bottom:34px;}
+  .lead a{color:var(--accent);}
 
-  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:30px;}
-  .metric{background:var(--panel);padding:16px 16px;}
-  .metric .v{font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--accent);line-height:1.1;}
-  .metric .k{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.4;}
+  .metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:12px; overflow:hidden;}
+  .metric{background:var(--paper); padding:16px;}
+  .metric .v{font-size:22px; font-weight:800; color:var(--accent); letter-spacing:-.02em;}
+  .metric .k{font-size:12px; color:var(--muted); margin-top:4px; line-height:1.4;}
 
-  /* sections */
-  section{margin-top:56px;}
-  h2{font-size:13px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
-    padding-bottom:11px;border-bottom:1px solid var(--rule);margin-bottom:26px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
-  h2 .side{color:var(--muted);font-size:11px;letter-spacing:.06em;font-weight:400;text-transform:none;}
+  h2{
+    font-size:22px; font-weight:800; letter-spacing:-.015em;
+    color:var(--ink); margin:60px 0 24px;
+    display:flex; align-items:baseline; gap:10px;
+  }
+  section:first-of-type h2{margin-top:0;}
+  h2::after{content:"";flex:1;height:1px;background:var(--rule);margin-left:4px;}
+  h2 .side{font-size:12.5px; color:var(--muted); font-weight:500;}
 
-  /* case cards */
-  .case{border:1px solid var(--rule);background:var(--panel);padding:26px 28px;margin-bottom:16px;}
-  .case-tag{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase;margin-bottom:10px;}
-  .case h3{font-size:19px;font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:14px;}
-  .case p{font-size:15px;margin-bottom:11px;max-width:var(--measure);}
+  .case{border:1px solid var(--rule); border-radius:14px; padding:26px 28px; margin-bottom:18px;}
+  .case-tag{font-size:12.5px; color:var(--muted); font-weight:600; margin-bottom:8px;}
+  .case h3{font-size:19px; font-weight:800; letter-spacing:-.01em; line-height:1.4; margin-bottom:14px;}
+  .case p{font-size:15px; margin-bottom:11px; color:#333;}
   .case p:last-of-type{margin-bottom:0;}
-  .case code{font-family:var(--mono);font-size:13px;background:var(--paper);padding:1px 6px;}
-  .case .highlight{margin-top:14px;padding:12px 16px;background:var(--accent-soft);border-left:3px solid var(--accent);font-size:14px;font-family:var(--mono);}
+  .case code{font-family:ui-monospace,Consolas,monospace; font-size:13.5px; background:var(--accent-soft); padding:1px 6px; border-radius:4px;}
+  .case .highlight{margin-top:14px; padding:13px 16px; background:var(--accent-soft); border-radius:10px; font-size:14.5px; line-height:1.6;}
   .case .highlight b{color:var(--accent);}
-  .case-foot{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
-  .badge{font-family:var(--mono);font-size:11px;letter-spacing:.03em;padding:4px 10px;border:1px solid var(--rule);color:var(--muted);background:var(--paper);}
-  .badge.money{color:var(--bad);border-color:var(--bad);background:var(--bad-soft);}
-  .badge.security{color:var(--warn);border-color:var(--warn);background:var(--warn-soft);}
-  .badge.perf{color:var(--good);border-color:var(--good);background:var(--good-soft);}
-  .badge.ai{color:var(--accent);border-color:var(--accent);background:var(--accent-soft);}
+  .case-foot{display:flex; flex-wrap:wrap; gap:7px; margin-top:16px;}
+  .badge{font-size:12px; font-weight:600; letter-spacing:.02em; padding:5px 11px; border-radius:20px; color:var(--muted); background:#F4F5F7;}
+  .badge.money{color:var(--bad); background:var(--bad-soft);}
+  .badge.security{color:var(--warn); background:var(--warn-soft);}
+  .badge.perf{color:var(--good); background:var(--good-soft);}
+  .badge.ai{color:var(--accent); background:var(--accent-soft);}
 
-  .subhead{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:34px 0 16px;}
-  .note{font-size:13.5px;color:var(--muted);max-width:var(--measure);margin-top:18px;}
+  .note{font-size:13.5px; color:var(--muted); margin-top:18px; line-height:1.7;}
 
-  /* stack */
-  .stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;}
-  .stack-col{border:1px solid var(--rule);background:var(--panel);padding:20px 22px;}
-  .stack-col .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+  .stack{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px;}
+  .stack-col .lbl{font-size:13px; font-weight:700; letter-spacing:.02em; margin-bottom:10px;}
+  .stack-col.d .lbl{color:var(--warn);}
   .stack-col.p .lbl{color:var(--good);}
   .stack-col.e .lbl{color:var(--accent);}
-  .stack-col.d .lbl{color:var(--warn);}
-  .chips{display:flex;flex-wrap:wrap;gap:7px;}
-  .chip{font-family:var(--mono);font-size:12.5px;padding:4px 10px;background:var(--paper);border:1px solid var(--rule);}
-  .stack-note{font-size:13px;color:var(--muted);margin-top:14px;}
+  .chips{display:flex; flex-wrap:wrap; gap:7px;}
+  .chip{font-size:13px; padding:5px 11px; background:#F4F5F7; border-radius:20px; color:#333;}
+  .stack-note{font-size:13.5px; color:var(--muted); margin-top:18px; line-height:1.7;}
 
-  .links{display:flex;flex-wrap:wrap;gap:10px;}
-  .links a{font-family:var(--mono);font-size:12.5px;text-decoration:none;color:var(--accent);border:1px solid var(--accent);padding:6px 13px;transition:background .15s;}
+  .links{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;}
+  .links a{font-size:13.5px; text-decoration:none; color:var(--accent); border:1px solid var(--accent); padding:7px 15px; border-radius:20px; font-weight:600;}
   .links a:hover{background:var(--accent-soft);}
-  .links a::before{content:"→ ";}
 
-  /* contact */
-  .contact{background:var(--ink);color:var(--paper);padding:40px 36px;margin-top:56px;}
-  .contact .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:16px;}
-  .contact-rows{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px 30px;}
-  .contact-rows .row .rk{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-bottom:5px;}
-  .contact-rows .row .rv{font-size:16px;font-family:var(--mono);}
-  .contact-rows .row .rv a{color:var(--paper);}
+  .contact{background:var(--ink); color:var(--paper); padding:36px 32px; margin-top:60px; border-radius:16px;}
+  .contact .lbl{font-size:12px; letter-spacing:.1em; text-transform:uppercase; opacity:.6; margin-bottom:16px;}
+  .contact-rows{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px 30px;}
+  .contact-rows .rk{font-size:11px; letter-spacing:.08em; text-transform:uppercase; opacity:.55; margin-bottom:5px;}
+  .contact-rows .rv{font-size:16px;}
+  .contact-rows .rv a{color:var(--paper);}
 
-  .foot{margin-top:26px;font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:center;}
+  .foot{margin-top:26px; font-size:13px; color:var(--muted); text-align:center;}
 
   a{color:var(--accent);}
-  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<div class="page">
 
   <header class="hero">
-    <div class="kicker">Backend · Full-stack Developer</div>
-    <h1>임현진</h1>
+    <h1>임현진<span class="dot">.</span></h1>
     <div class="role">4대보험·급여·건설노무 도메인 · 3년 3개월차</div>
-    <p class="lead">경력·프로젝트 요약은 이력서에 있습니다. 여기는 최근 몇 달 사이 실제로 부딪혀서 고친 것들을,
-      원인을 찾아간 순서 그대로 적어뒀습니다.</p>
+    <p class="lead">경력·프로젝트 요약은 <a href="mailto:hyun7219@naver.com">이력서</a>에 있습니다. 여기는 최근 몇 달 사이
+      실제로 부딪혀서 고친 것들을, 원인을 찾아간 순서 그대로 적어뒀습니다.</p>
 
     <div class="metrics">
       <div class="metric"><div class="v">8건</div><div class="k">아래 정리한 문제 해결 사례</div></div>
-      <div class="metric"><div class="v">22곳</div><div class="k">같은 결함이 복제돼 있던 호출부(사례 6)</div></div>
-      <div class="metric"><div class="v">98.2%</div><div class="k">서비스워커 설치 용량 절감(사례 5)</div></div>
-      <div class="metric"><div class="v">300건</div><div class="k">운영 데이터로 직접 대조 검증(사례 3)</div></div>
+      <div class="metric"><div class="v">22곳</div><div class="k">같은 결함이 복제돼 있던 호출부</div></div>
+      <div class="metric"><div class="v">98.2%</div><div class="k">서비스워커 설치 용량 절감</div></div>
+      <div class="metric"><div class="v">300건</div><div class="k">운영 데이터로 직접 대조 검증</div></div>
     </div>
   </header>
 
@@ -220,7 +209,7 @@
   </section>
 
   <section>
-    <h2>기술 스택</h2>
+    <h2>기술 스택<span class="dot">.</span></h2>
     <div class="stack">
       <div class="stack-col d">
         <div class="lbl">도메인</div>
@@ -260,8 +249,8 @@
   <div class="contact">
     <div class="lbl">Contact</div>
     <div class="contact-rows">
-      <div class="row"><div class="rk">Email</div><div class="rv"><a href="mailto:hyun7219@naver.com">hyun7219@naver.com</a></div></div>
-      <div class="row"><div class="rk">GitHub</div><div class="rv"><a href="https://github.com/dalgeom">github.com/dalgeom</a></div></div>
+      <div><div class="rk">Email</div><div class="rv"><a href="mailto:hyun7219@naver.com">hyun7219@naver.com</a></div></div>
+      <div><div class="rk">GitHub</div><div class="rv"><a href="https://github.com/dalgeom">github.com/dalgeom</a></div></div>
     </div>
   </div>
 
