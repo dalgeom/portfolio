@@ -30,7 +30,10 @@
 
   header.hero{ padding-top:56px; margin-bottom:52px; }
   h1{font-size:38px; margin:6px 0 8px; letter-spacing:-.025em; font-weight:800; line-height:1.2;}
-  .role{font-size:15.5px; color:var(--muted); margin-bottom:18px; font-weight:500;}
+  .role{font-size:15.5px; color:var(--muted); margin-bottom:14px; font-weight:500;}
+  .hero-contact{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;}
+  .hero-contact a{font-size:13.5px; color:var(--muted); text-decoration:none; padding:6px 12px; border:1px solid var(--rule); border-radius:20px; background:#FAFBFC;}
+  .hero-contact a:hover{border-color:var(--accent); color:var(--accent);}
   .lead{font-size:16.5px; color:#333; max-width:100%; margin-bottom:34px;}
   .lead a{color:var(--accent);}
 
@@ -99,8 +102,12 @@
   <header class="hero">
     <h1>임현진<span class="dot">.</span></h1>
     <div class="role">4대보험·급여·건설노무 도메인 · 3년 3개월차</div>
-    <p class="lead">경력·프로젝트 요약은 <a href="mailto:hyun7219@naver.com">이력서</a>에 있습니다. 여기는 최근 몇 달 사이
-      실제로 부딪혀서 고친 것들을, 원인을 찾아간 순서 그대로 적어뒀습니다.</p>
+    <div class="hero-contact">
+      <a href="mailto:hyun7219@naver.com">hyun7219@naver.com</a>
+      <a href="https://github.com/dalgeom">github.com/dalgeom</a>
+    </div>
+    <p class="lead">경력·프로젝트 요약은 이력서에 있습니다. 여기는 최근 몇 달 사이
+      실제로 부딪혀서 고친 것들을, 이력서 주제(정부기관 연동·요금제·급여 계산)와 가까운 순서로 적어뒀습니다.</p>
 
     <div class="metrics">
       <div class="metric"><div class="v">8건</div><div class="k">아래 정리한 문제 해결 사례</div></div>
@@ -114,7 +121,18 @@
     <h2><span>문제 해결 사례</span><span class="side">회사 저장소 실제 커밋 기반</span></h2>
 
     <div class="case">
-      <div class="case-tag">공무링크 · 2026.09</div>
+      <div class="case-tag">공무링크 · 요금제 시스템 · 2026.09</div>
+      <h3>같은 버그가 22곳에 복사돼 있었다</h3>
+      <p>무료 회원이 6개월 지난 작업년월을 조회하면 서버가 403을 돌려주는데, 그 응답을 처리하는 코드가 소스 전체에 한 곳도 없었습니다. 호출부들이 응답 코드를 안 보고 바로 배열로 다루려다 보니 그 자리에서 에러가 나고, 로딩 스피너를 끄는 줄까지 못 가서 화면이 영원히 로딩 중으로 남았습니다.</p>
+      <p>같은 가드를 호출하는 곳이 22곳이었는데, 응답을 제대로 확인하는 곳은 한 곳뿐이었습니다. 공통 처리 함수를 하나 만들어 22곳(16개 파일) 전부에 적용했습니다. 이 경험이, 지금 진행 중인 요금제(Free/Lite/Pro/Max) 전환에서 등급 판정 로직을 처음부터 한 곳(`tier.ts`)에 모아 설계한 이유이기도 합니다.</p>
+      <div class="case-foot">
+        <span class="badge">시스템적 결함</span>
+        <span class="badge ai">AI 워크플로</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-tag">공무링크 · 급여 계산 · 2026.09</div>
       <h3>가불금 공제가 배포 하나로 두 배가 됐다</h3>
       <p>노무관리에 가불금 같은 기타공제 항목을 새로 넣었는데, 며칠 뒤 국민연금 임의가입 처리에서만 공제액이 두 배로 빠진다는 제보가 들어왔습니다. 5만원이어야 할 게 10만원이 빠져 있었습니다.</p>
       <p>파보니 급여를 확정하는 경로가 두 종류였습니다. 최종 금액을 통째로 계산해서 저장하는 쪽과, "기존 금액에서 얼마를 뺀다"는 식으로 저장하는 쪽. 기타공제를 추가하면서 이 두 경로가 같이 쓰는 SQL에 공제액을 한 번 더 빼는 코드를 넣었는데, 뒤쪽 경로는 이미 그 공제가 반영된 값을 넘기고 있었던 겁니다.</p>
@@ -127,18 +145,7 @@
     </div>
 
     <div class="case">
-      <div class="case-tag">현장링크 · 2026.07</div>
-      <h3>로그인 안 해도 남의 체크리스트가 열렸다</h3>
-      <p>현장 근로자 앱 API를 점검하다가 로그인 여부를 확인하지 않는 체크리스트 저장·조회 엔드포인트를 몇 개 찾았습니다. 요청값만 바꾸면 자기 배정 건이 아닌 것도 처리되는 구조였습니다.</p>
-      <p>같이 발견한 건 사진 업로드 쪽 버그였는데, 여러 장 찍으면 같은 파일명으로 저장돼서 앞서 찍은 사진이 덮어써지고 있었습니다. 로그인 가드와 소유권 검증을 넣고, 사진 파일명에 항목 번호를 넣어 분리했습니다. 제출이 중간에 끊기면 다음 태깅 때 다시 보내지도록 흐름도 고쳤습니다.</p>
-      <div class="case-foot">
-        <span class="badge security">인증 우회(IDOR)</span>
-        <span class="badge ai">AI 워크플로</span>
-      </div>
-    </div>
-
-    <div class="case">
-      <div class="case-tag">공무링크 · 2026.09</div>
+      <div class="case-tag">공무링크 · 정부기관 연동 · 2026.09</div>
       <h3>내 사업장인데 다른 대행기관 현장 이름이 보였다</h3>
       <p>근무 이력을 대조해서 "이 사람 이미 다른 현장에서 일한 기록이 있다"고 걸러주는 기능이 있는데, 문제없는 근로자가 걸리고 심지어 낯선 현장 이름까지 화면에 뜬다는 제보를 받았습니다.</p>
       <p>DB 하나에 여러 대행기관 사업장이 같이 들어있는 구조인데, 근로자 식별번호는 대행기관과 무관하게 시스템 전체에서 공통으로 씁니다. 문제의 조회 함수가 이 번호만으로 근무 기록을 찾다 보니, 다른 대행기관 현장 기록까지 같이 딸려 나오고 있었습니다. 조회 범위를 대행기관 코드로 좁혀서 고쳤습니다.</p>
@@ -150,7 +157,7 @@
     </div>
 
     <div class="case">
-      <div class="case-tag">공무링크 · 2026.09</div>
+      <div class="case-tag">공무링크 · 4대보험 도메인 · 2026.09</div>
       <h3>붙여넣기로만 재현되는 버그</h3>
       <p>상용직 주민번호를 하이픈 없이 한 번에 붙여넣으면, 내국인 번호인데도 외국인으로 판정되는 문제가 있었습니다. 한 글자씩 치면 멀쩡했습니다. 제보가 들어와도 재현이 안 되던 이유였습니다.</p>
       <p>입력값을 하이픈 넣은 형태로 다듬어 화면엔 그 값을 보여주는데, 국적 판정 로직은 다듬기 전 원본값을 보고 있었습니다. <code>charAt(7)</code>로 여덟 번째 자리를 보는 코드였는데, 이게 하이픈 있는 형식을 전제로 한 인덱스였던 겁니다. 하이픈 없이 13자리가 한 번에 들어오면 인덱스가 하나씩 밀려서, 뒷자리 두 번째 숫자가 5~9인 경우에만 틀렸습니다.</p>
@@ -162,7 +169,7 @@
     </div>
 
     <div class="case">
-      <div class="case-tag">공무링크 · 2026.09</div>
+      <div class="case-tag">공무링크 · 서비스 안정성 · 2026.09</div>
       <h3>배포 다음 날 아침마다 접속이 막혔다</h3>
       <p>서비스워커가 설치될 때 정적 자산 358개, 71.6MB를 한 번에 받고 있었습니다. 배포마다 캐시 이름이 바뀌어서 처음부터 다시 받는 구조였고, 그 안엔 대부분 회원이 평생 안 여는 43MB짜리 소개 영상도 들어있었습니다. 접속이 몰리는 배포 다음 날 아침마다 사용자 브라우저 연결이 막혀서 "눌러도 반응이 없다"는 문의가 왔습니다.</p>
       <p>설치 시 받는 걸 진입 스크립트와 CSS만으로 줄이고, 나머지는 실제로 필요할 때 캐시에 넣도록 바꿨습니다. 정적 자산은 어차피 브라우저 HTTP 캐시가 파일명 해시로 영구 캐싱하고 있어서, 서비스워커 프리캐시는 그 위에 중복으로 얹혀 있던 것이었습니다.</p>
@@ -174,12 +181,12 @@
     </div>
 
     <div class="case">
-      <div class="case-tag">공무링크 · 2026.09</div>
-      <h3>같은 버그가 22곳에 복사돼 있었다</h3>
-      <p>무료 회원이 6개월 지난 작업년월을 조회하면 서버가 403을 돌려주는데, 그 응답을 처리하는 코드가 소스 전체에 한 곳도 없었습니다. 호출부들이 응답 코드를 안 보고 바로 배열로 다루려다 보니 그 자리에서 에러가 나고, 로딩 스피너를 끄는 줄까지 못 가서 화면이 영원히 로딩 중으로 남았습니다.</p>
-      <p>같은 가드를 호출하는 곳이 22곳이었는데, 응답을 제대로 확인하는 곳은 한 곳뿐이었습니다. 공통 처리 함수를 하나 만들어 22곳(16개 파일) 전부에 적용했습니다.</p>
+      <div class="case-tag">현장링크 · 2026.07</div>
+      <h3>로그인 안 해도 남의 체크리스트가 열렸다</h3>
+      <p>현장 근로자 앱 API를 점검하다가 로그인 여부를 확인하지 않는 체크리스트 저장·조회 엔드포인트를 몇 개 찾았습니다. 요청값만 바꾸면 자기 배정 건이 아닌 것도 처리되는 구조였습니다.</p>
+      <p>같이 발견한 건 사진 업로드 쪽 버그였는데, 여러 장 찍으면 같은 파일명으로 저장돼서 앞서 찍은 사진이 덮어써지고 있었습니다. 로그인 가드와 소유권 검증을 넣고, 사진 파일명에 항목 번호를 넣어 분리했습니다. 제출이 중간에 끊기면 다음 태깅 때 다시 보내지도록 흐름도 고쳤습니다.</p>
       <div class="case-foot">
-        <span class="badge">시스템적 결함</span>
+        <span class="badge security">인증 우회(IDOR)</span>
         <span class="badge ai">AI 워크플로</span>
       </div>
     </div>
