@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>임현진</title>
-<meta name="description" content="4대보험·급여·건설노무 도메인 개발자 임현진의 작업 기록.">
-<meta property="og:title" content="임현진">
-<meta property="og:description" content="4대보험·급여·건설노무 도메인 개발자 임현진의 작업 기록.">
+<title>임현진 — 개발자 포트폴리오</title>
+<meta name="description" content="4대보험·급여·건설노무 도메인 개발자 임현진의 프로젝트와 문제 해결 기록.">
+<meta property="og:title" content="임현진 — 개발자 포트폴리오">
+<meta property="og:description" content="4대보험·급여·건설노무 도메인 개발자 임현진의 프로젝트와 문제 해결 기록.">
 <meta property="og:type" content="website">
 <style>
   :root{
@@ -15,9 +15,10 @@
     --accent:#0E5C7F; --accent-soft:#E2EDF3;
     --good:#136F53; --good-soft:#E1F0EA;
     --warn:#8A5A00; --warn-soft:#F6EEDC;
+    --bad:#A33B3B; --bad-soft:#F7E7E7;
     --sans:"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     --mono:ui-monospace,"Cascadia Mono","Consolas","D2Coding","SFMono-Regular",Menlo,monospace;
-    --measure:68ch;
+    --measure:70ch; --wide:900px;
   }
   @media (prefers-color-scheme:dark){
     :root{
@@ -25,34 +26,76 @@
       --rule:#26313A; --rule-soft:#1E272E;
       --accent:#4FA8CE; --accent-soft:#13303D;
       --good:#3DBF97; --good-soft:#11302A; --warn:#D9A441; --warn-soft:#2E2515;
+      --bad:#E08080; --bad-soft:#341C1C;
     }
   }
   body{background:var(--paper);color:var(--ink);font-family:var(--sans);
-    font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;}
-  .wrap{max-width:760px;margin:0 auto;padding:60px 24px 100px;}
+    font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;}
+  .wrap{max-width:var(--wide);margin:0 auto;padding:0 24px 100px;}
 
-  header{margin-bottom:56px;}
-  header h1{font-size:26px;font-weight:700;margin-bottom:6px;}
-  header .role{color:var(--muted);font-size:15px;}
-  header .role a{color:var(--accent);}
+  /* hero */
+  .hero{padding:68px 0 32px;border-bottom:2px solid var(--ink);margin-bottom:48px;}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
+  .hero h1{font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-.02em;margin-bottom:8px;}
+  .hero .role{font-family:var(--mono);font-size:14px;color:var(--muted);margin-bottom:22px;letter-spacing:.02em;}
+  .hero .lead{color:var(--muted);max-width:var(--measure);font-size:16px;}
+  .hero .lead a{color:var(--accent);}
 
-  .entry{margin-bottom:44px;padding-bottom:44px;border-bottom:1px solid var(--rule);}
-  .entry:last-of-type{border-bottom:none;}
-  .entry .proj{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.03em;margin-bottom:6px;}
-  .entry h2{font-size:19px;font-weight:700;line-height:1.4;margin-bottom:14px;}
-  .entry p{margin-bottom:12px;font-size:15.5px;}
-  .entry p:last-child{margin-bottom:0;}
-  .entry code{font-family:var(--mono);font-size:13.5px;background:var(--paper);padding:1px 5px;}
-  .entry .num{color:var(--accent);font-weight:700;}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:30px;}
+  .metric{background:var(--panel);padding:16px 16px;}
+  .metric .v{font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--accent);line-height:1.1;}
+  .metric .k{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.4;}
 
-  h3.section{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 24px;}
+  /* sections */
+  section{margin-top:56px;}
+  h2{font-size:13px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+    padding-bottom:11px;border-bottom:1px solid var(--rule);margin-bottom:26px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
+  h2 .side{color:var(--muted);font-size:11px;letter-spacing:.06em;font-weight:400;text-transform:none;}
 
-  .stack{margin-top:60px;font-size:14.5px;color:var(--muted);}
-  .stack b{color:var(--ink);font-weight:600;}
-  .stack .row{margin-bottom:6px;}
+  /* case cards */
+  .case{border:1px solid var(--rule);background:var(--panel);padding:26px 28px;margin-bottom:16px;}
+  .case-tag{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase;margin-bottom:10px;}
+  .case h3{font-size:19px;font-weight:700;letter-spacing:-.01em;line-height:1.4;margin-bottom:14px;}
+  .case p{font-size:15px;margin-bottom:11px;max-width:var(--measure);}
+  .case p:last-of-type{margin-bottom:0;}
+  .case code{font-family:var(--mono);font-size:13px;background:var(--paper);padding:1px 6px;}
+  .case .highlight{margin-top:14px;padding:12px 16px;background:var(--accent-soft);border-left:3px solid var(--accent);font-size:14px;font-family:var(--mono);}
+  .case .highlight b{color:var(--accent);}
+  .case-foot{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;}
+  .badge{font-family:var(--mono);font-size:11px;letter-spacing:.03em;padding:4px 10px;border:1px solid var(--rule);color:var(--muted);background:var(--paper);}
+  .badge.money{color:var(--bad);border-color:var(--bad);background:var(--bad-soft);}
+  .badge.security{color:var(--warn);border-color:var(--warn);background:var(--warn-soft);}
+  .badge.perf{color:var(--good);border-color:var(--good);background:var(--good-soft);}
+  .badge.ai{color:var(--accent);border-color:var(--accent);background:var(--accent-soft);}
 
-  .foot{margin-top:60px;font-size:14px;color:var(--muted);}
-  .foot a{color:var(--accent);}
+  .subhead{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:34px 0 16px;}
+  .note{font-size:13.5px;color:var(--muted);max-width:var(--measure);margin-top:18px;}
+
+  /* stack */
+  .stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;}
+  .stack-col{border:1px solid var(--rule);background:var(--panel);padding:20px 22px;}
+  .stack-col .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+  .stack-col.p .lbl{color:var(--good);}
+  .stack-col.e .lbl{color:var(--accent);}
+  .stack-col.d .lbl{color:var(--warn);}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;}
+  .chip{font-family:var(--mono);font-size:12.5px;padding:4px 10px;background:var(--paper);border:1px solid var(--rule);}
+  .stack-note{font-size:13px;color:var(--muted);margin-top:14px;}
+
+  .links{display:flex;flex-wrap:wrap;gap:10px;}
+  .links a{font-family:var(--mono);font-size:12.5px;text-decoration:none;color:var(--accent);border:1px solid var(--accent);padding:6px 13px;transition:background .15s;}
+  .links a:hover{background:var(--accent-soft);}
+  .links a::before{content:"→ ";}
+
+  /* contact */
+  .contact{background:var(--ink);color:var(--paper);padding:40px 36px;margin-top:56px;}
+  .contact .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:16px;}
+  .contact-rows{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px 30px;}
+  .contact-rows .row .rk{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-bottom:5px;}
+  .contact-rows .row .rv{font-size:16px;font-family:var(--mono);}
+  .contact-rows .row .rv a{color:var(--paper);}
+
+  .foot{margin-top:26px;font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:center;}
 
   a{color:var(--accent);}
   a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
@@ -63,84 +106,166 @@
 
 <div class="wrap">
 
-  <header>
+  <header class="hero">
+    <div class="kicker">Backend · Full-stack Developer</div>
     <h1>임현진</h1>
-    <p class="role">4대보험·급여·건설노무 SaaS 개발, 3년 3개월째. 경력·기술스택은 <a href="mailto:hyun7219@naver.com">이력서</a>에 정리했고, 여기는 최근에 실제로 고친 것들입니다.</p>
+    <div class="role">4대보험·급여·건설노무 도메인 · 3년 3개월차</div>
+    <p class="lead">경력·프로젝트 요약은 이력서에 있습니다. 여기는 최근 몇 달 사이 실제로 부딪혀서 고친 것들을,
+      원인을 찾아간 순서 그대로 적어뒀습니다.</p>
+
+    <div class="metrics">
+      <div class="metric"><div class="v">8건</div><div class="k">아래 정리한 문제 해결 사례</div></div>
+      <div class="metric"><div class="v">22곳</div><div class="k">같은 결함이 복제돼 있던 호출부(사례 6)</div></div>
+      <div class="metric"><div class="v">98.2%</div><div class="k">서비스워커 설치 용량 절감(사례 5)</div></div>
+      <div class="metric"><div class="v">300건</div><div class="k">운영 데이터로 직접 대조 검증(사례 3)</div></div>
+    </div>
   </header>
 
-  <div class="entry">
-    <div class="proj">공무링크 · 2026.09</div>
-    <h2>가불금 공제가 배포 하나로 두 배가 됐다</h2>
-    <p>노무관리에 가불금 같은 기타공제 항목을 새로 넣었는데, 며칠 뒤 국민연금 임의가입 처리에서만 공제액이 두 배로 빠진다는 제보가 들어왔습니다. 5만원이어야 할 게 10만원이 빠져 있었습니다.</p>
-    <p>파보니 급여를 확정하는 경로가 두 종류였습니다. 최종 금액을 통째로 계산해서 저장하는 쪽과, "기존 금액에서 얼마를 뺀다"는 식으로 저장하는 쪽. 기타공제를 추가하면서 이 두 경로가 같이 쓰는 SQL에 공제액을 한 번 더 빼는 코드를 넣어버렸는데, 뒤쪽 경로는 이미 그 공제가 반영된 값을 넘기고 있었던 겁니다.</p>
-    <p>SQL에서 억지로 맞추는 대신 최종 금액을 만드는 함수 쪽에서 직접 계산하게 바꿨습니다. 타입체크·린트·E2E 225건이 그대로 유지되는지 확인하고 반영했습니다.</p>
+  <section>
+    <h2><span>문제 해결 사례</span><span class="side">회사 저장소 실제 커밋 기반</span></h2>
+
+    <div class="case">
+      <div class="case-tag">공무링크 · 2026.09</div>
+      <h3>가불금 공제가 배포 하나로 두 배가 됐다</h3>
+      <p>노무관리에 가불금 같은 기타공제 항목을 새로 넣었는데, 며칠 뒤 국민연금 임의가입 처리에서만 공제액이 두 배로 빠진다는 제보가 들어왔습니다. 5만원이어야 할 게 10만원이 빠져 있었습니다.</p>
+      <p>파보니 급여를 확정하는 경로가 두 종류였습니다. 최종 금액을 통째로 계산해서 저장하는 쪽과, "기존 금액에서 얼마를 뺀다"는 식으로 저장하는 쪽. 기타공제를 추가하면서 이 두 경로가 같이 쓰는 SQL에 공제액을 한 번 더 빼는 코드를 넣었는데, 뒤쪽 경로는 이미 그 공제가 반영된 값을 넘기고 있었던 겁니다.</p>
+      <p>SQL에서 억지로 맞추는 대신 최종 금액을 만드는 함수 쪽에서 직접 계산하게 바꿨습니다.</p>
+      <div class="highlight"><b>검증</b> 타입체크·린트·E2E 225건이 그대로 유지되는지 확인 후 반영</div>
+      <div class="case-foot">
+        <span class="badge money">금전 계산 버그</span>
+        <span class="badge ai">AI 워크플로</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-tag">현장링크 · 2026.07</div>
+      <h3>로그인 안 해도 남의 체크리스트가 열렸다</h3>
+      <p>현장 근로자 앱 API를 점검하다가 로그인 여부를 확인하지 않는 체크리스트 저장·조회 엔드포인트를 몇 개 찾았습니다. 요청값만 바꾸면 자기 배정 건이 아닌 것도 처리되는 구조였습니다.</p>
+      <p>같이 발견한 건 사진 업로드 쪽 버그였는데, 여러 장 찍으면 같은 파일명으로 저장돼서 앞서 찍은 사진이 덮어써지고 있었습니다. 로그인 가드와 소유권 검증을 넣고, 사진 파일명에 항목 번호를 넣어 분리했습니다. 제출이 중간에 끊기면 다음 태깅 때 다시 보내지도록 흐름도 고쳤습니다.</p>
+      <div class="case-foot">
+        <span class="badge security">인증 우회(IDOR)</span>
+        <span class="badge ai">AI 워크플로</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-tag">공무링크 · 2026.09</div>
+      <h3>내 사업장인데 다른 대행기관 현장 이름이 보였다</h3>
+      <p>근무 이력을 대조해서 "이 사람 이미 다른 현장에서 일한 기록이 있다"고 걸러주는 기능이 있는데, 문제없는 근로자가 걸리고 심지어 낯선 현장 이름까지 화면에 뜬다는 제보를 받았습니다.</p>
+      <p>DB 하나에 여러 대행기관 사업장이 같이 들어있는 구조인데, 근로자 식별번호는 대행기관과 무관하게 시스템 전체에서 공통으로 씁니다. 문제의 조회 함수가 이 번호만으로 근무 기록을 찾다 보니, 다른 대행기관 현장 기록까지 같이 딸려 나오고 있었습니다. 조회 범위를 대행기관 코드로 좁혀서 고쳤습니다.</p>
+      <div class="highlight"><b>검증</b> 운영 데이터 300건으로 수정 전/후 직접 대조, 재발 방지 테스트 3건 추가</div>
+      <div class="case-foot">
+        <span class="badge security">데이터 격리 버그</span>
+        <span class="badge ai">AI 워크플로</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-tag">공무링크 · 2026.09</div>
+      <h3>붙여넣기로만 재현되는 버그</h3>
+      <p>상용직 주민번호를 하이픈 없이 한 번에 붙여넣으면, 내국인 번호인데도 외국인으로 판정되는 문제가 있었습니다. 한 글자씩 치면 멀쩡했습니다. 제보가 들어와도 재현이 안 되던 이유였습니다.</p>
+      <p>입력값을 하이픈 넣은 형태로 다듬어 화면엔 그 값을 보여주는데, 국적 판정 로직은 다듬기 전 원본값을 보고 있었습니다. <code>charAt(7)</code>로 여덟 번째 자리를 보는 코드였는데, 이게 하이픈 있는 형식을 전제로 한 인덱스였던 겁니다. 하이픈 없이 13자리가 한 번에 들어오면 인덱스가 하나씩 밀려서, 뒷자리 두 번째 숫자가 5~9인 경우에만 틀렸습니다.</p>
+      <div class="highlight"><b>검증</b> 판정 로직도 다듬은 값을 보도록 고치고 테스트 14건 추가</div>
+      <div class="case-foot">
+        <span class="badge">파싱 버그</span>
+        <span class="badge ai">AI 워크플로</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-tag">공무링크 · 2026.09</div>
+      <h3>배포 다음 날 아침마다 접속이 막혔다</h3>
+      <p>서비스워커가 설치될 때 정적 자산 358개, 71.6MB를 한 번에 받고 있었습니다. 배포마다 캐시 이름이 바뀌어서 처음부터 다시 받는 구조였고, 그 안엔 대부분 회원이 평생 안 여는 43MB짜리 소개 영상도 들어있었습니다. 접속이 몰리는 배포 다음 날 아침마다 사용자 브라우저 연결이 막혀서 "눌러도 반응이 없다"는 문의가 왔습니다.</p>
+      <p>설치 시 받는 걸 진입 스크립트와 CSS만으로 줄이고, 나머지는 실제로 필요할 때 캐시에 넣도록 바꿨습니다. 정적 자산은 어차피 브라우저 HTTP 캐시가 파일명 해시로 영구 캐싱하고 있어서, 서비스워커 프리캐시는 그 위에 중복으로 얹혀 있던 것이었습니다.</p>
+      <div class="highlight"><b>결과</b> 설치 시 다운로드 358개 71.6MB → 76개 1.3MB (98.2% 감소)</div>
+      <div class="case-foot">
+        <span class="badge perf">성능 개선</span>
+        <span class="badge ai">AI 워크플로</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-tag">공무링크 · 2026.09</div>
+      <h3>같은 버그가 22곳에 복사돼 있었다</h3>
+      <p>무료 회원이 6개월 지난 작업년월을 조회하면 서버가 403을 돌려주는데, 그 응답을 처리하는 코드가 소스 전체에 한 곳도 없었습니다. 호출부들이 응답 코드를 안 보고 바로 배열로 다루려다 보니 그 자리에서 에러가 나고, 로딩 스피너를 끄는 줄까지 못 가서 화면이 영원히 로딩 중으로 남았습니다.</p>
+      <p>같은 가드를 호출하는 곳이 22곳이었는데, 응답을 제대로 확인하는 곳은 한 곳뿐이었습니다. 공통 처리 함수를 하나 만들어 22곳(16개 파일) 전부에 적용했습니다.</p>
+      <div class="case-foot">
+        <span class="badge">시스템적 결함</span>
+        <span class="badge ai">AI 워크플로</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-tag">건설HR · 2026.06 · 단독</div>
+      <h3>0에서 시작하며 가장 먼저 걸러낸 건 제 실수였다</h3>
+      <p>신규 서비스를 처음부터 만들면서 초반 며칠은 속도를 내려고 DB 접속 정보를 코드에 바로 넣어뒀습니다. 배포 전에 스스로 점검하다가 알아채고 환경변수로 옮겼습니다. 감출 일은 아니라고 생각해서 그냥 적어둡니다.</p>
+      <div class="case-foot">
+        <span class="badge">보안 셀프체크</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-tag">ddalkkak · 개인 프로젝트</div>
+      <h3>제가 만든 퍼즐인데 답이 하나가 아니었다</h3>
+      <p>직접 만든 퍼즐 게임 문제 181개를 다시 검수하다가, 의도한 것과 다른 답도 나올 수 있는 문제 19건을 찾았습니다. 그중 하나는 시소 그림이 물리 법칙과 반대로 그려져 있었는데, 좌표를 직접 넣어 모멘트를 계산해보니(왼쪽 24 : 오른쪽 12) 왼쪽이 내려가야 하는 게 맞았습니다. 그림이 틀린 거였습니다.</p>
+      <p>다른 하나는 받침 유무로 갈리는 문제였는데, 예시 단어들이 우연히 "고유어인지"로도 똑같이 갈려서 의도치 않은 규칙으로도 같은 답이 나왔습니다. 두 규칙이 서로 다른 답을 내는 단어를 예시에 추가해서 막았습니다.</p>
+      <div class="highlight"><b>원칙</b> 정답은 하나도 바꾸지 않고, 그림·예시 쪽만 고쳐 유일한 답을 유지</div>
+      <div class="case-foot">
+        <span class="badge">개인 프로젝트</span>
+        <span class="badge ai">AI 워크플로</span>
+      </div>
+    </div>
+
+    <p class="note">뱃지가 붙은 사례는 최근 만든 에이전트 워크플로(원인 조사·초안 작성은 에이전트, 원인 검토·수정 범위 판단·머지는 직접)로 처리했습니다. 나머지는 코드를 직접 보고 고쳤습니다.</p>
+  </section>
+
+  <section>
+    <h2>기술 스택</h2>
+    <div class="stack">
+      <div class="stack-col d">
+        <div class="lbl">도메인</div>
+        <div class="chips">
+          <span class="chip">4대보험</span><span class="chip">급여·노무</span><span class="chip">전자계약</span>
+          <span class="chip">건설 행정</span><span class="chip">정부기관 EDI</span>
+        </div>
+      </div>
+      <div class="stack-col p">
+        <div class="lbl">주력</div>
+        <div class="chips">
+          <span class="chip">SvelteKit</span><span class="chip">Svelte 4·5</span><span class="chip">TypeScript</span>
+          <span class="chip">MariaDB / MySQL</span><span class="chip">Node.js</span>
+        </div>
+      </div>
+      <div class="stack-col e">
+        <div class="lbl">실무 투입 경험</div>
+        <div class="chips">
+          <span class="chip">C#</span><span class="chip">Docker</span><span class="chip">nginx</span><span class="chip">PM2</span>
+          <span class="chip">Puppeteer</span><span class="chip">PG 결제</span><span class="chip">PWA</span>
+          <span class="chip">Vitest</span><span class="chip">Playwright</span><span class="chip">JWT</span>
+        </div>
+      </div>
+    </div>
+    <p class="stack-note">React·Vue는 실무로는 안 써봤습니다. 컴포넌트·상태 관리 개념은 SvelteKit과 겹치는 부분이 있어서, 필요하면 짧은 시간 안에 따라잡을 수 있다고 보고 있습니다.</p>
+  </section>
+
+  <section>
+    <h2><span>개인 프로젝트</span><span class="side">공개 저장소</span></h2>
+    <div class="case">
+      <div class="case-tag">ddalkkak — 두뇌 퍼즐 웹게임</div>
+      <p>게임 로직과 문제은행 무결성을 Vitest로 보증합니다. 출시 후에도 콘텐츠 확장·SEO·GA 분석·유튜브 쇼츠 자동 생성까지 직접 붙이며 운영 중입니다.</p>
+      <div class="links"><a href="https://github.com/dalgeom/ddalkkak">github.com/dalgeom/ddalkkak</a></div>
+    </div>
+  </section>
+
+  <div class="contact">
+    <div class="lbl">Contact</div>
+    <div class="contact-rows">
+      <div class="row"><div class="rk">Email</div><div class="rv"><a href="mailto:hyun7219@naver.com">hyun7219@naver.com</a></div></div>
+      <div class="row"><div class="rk">GitHub</div><div class="rv"><a href="https://github.com/dalgeom">github.com/dalgeom</a></div></div>
+    </div>
   </div>
 
-  <div class="entry">
-    <div class="proj">현장링크 · 2026.07</div>
-    <h2>로그인 안 해도 남의 체크리스트가 열렸다</h2>
-    <p>현장 근로자 앱 API를 점검하다가 로그인 여부를 확인하지 않는 체크리스트 저장·조회 엔드포인트를 몇 개 찾았습니다. 요청값만 바꾸면 자기 배정 건이 아닌 것도 처리되는 구조였습니다.</p>
-    <p>같이 발견한 건 사진 업로드 쪽 버그였는데, 여러 장 찍으면 같은 파일명으로 저장돼서 앞서 찍은 사진이 덮어써지고 있었습니다. 로그인 가드와 소유권 검증을 넣고, 사진 파일명에 항목 번호를 넣어 분리했습니다. 제출이 중간에 끊기면 다음 태깅 때 다시 보내지도록 흐름도 고쳤습니다.</p>
-  </div>
-
-  <div class="entry">
-    <div class="proj">공무링크 · 2026.09</div>
-    <h2>내 사업장인데 다른 대행기관 현장 이름이 보였다</h2>
-    <p>근무 이력을 대조해서 "이 사람 이미 다른 현장에서 일한 기록이 있다"고 걸러주는 기능이 있는데, 문제없는 근로자가 걸리고 심지어 낯선 현장 이름까지 화면에 뜬다는 제보를 받았습니다.</p>
-    <p>DB 하나에 여러 대행기관 사업장이 같이 들어있는 구조인데, 근로자 식별번호는 대행기관과 무관하게 시스템 전체에서 공통으로 씁니다. 문제의 조회 함수가 이 번호만으로 근무 기록을 찾다 보니 다른 대행기관 현장 기록까지 같이 딸려 나오고 있었습니다. 조회 범위를 대행기관 코드로 좁혀서 고쳤고, 운영 데이터 300건으로 수정 전/후를 직접 대조했습니다. 재발 방지 테스트도 3건 붙였습니다.</p>
-  </div>
-
-  <div class="entry">
-    <div class="proj">공무링크 · 2026.09</div>
-    <h2>붙여넣기로만 재현되는 버그</h2>
-    <p>상용직 주민번호를 하이픈 없이 한 번에 붙여넣으면, 내국인 번호인데도 외국인으로 판정되는 문제가 있었습니다. 근데 한 글자씩 치면 멀쩡했습니다. 그래서 제보가 들어와도 재현이 안 됐습니다.</p>
-    <p>코드를 보니 입력값을 하이픈 넣은 형태로 다듬어서 화면엔 그 값을 보여주는데, 국적 판정 로직은 다듬기 전 원본값을 보고 있었습니다. <code>charAt(7)</code>로 여덟 번째 자리를 보는 코드였는데, 이게 하이픈 있는 형식을 전제로 한 인덱스였던 겁니다. 하이픈 없이 13자리가 한 번에 들어오면 인덱스가 하나씩 밀려서, 뒷자리 두 번째 숫자가 5~9인 경우에만 틀렸습니다. 판정 로직도 다듬은 값을 보도록 고치고 테스트 14개를 붙였습니다.</p>
-  </div>
-
-  <div class="entry">
-    <div class="proj">공무링크 · 2026.09</div>
-    <h2>배포 다음 날 아침마다 접속이 막혔다</h2>
-    <p>서비스워커가 설치될 때 정적 자산 358개, 71.6MB를 한 번에 받고 있었습니다. 배포마다 캐시 이름이 바뀌어서 처음부터 다시 받는 구조였고, 그 안엔 대부분 회원이 평생 안 여는 43MB짜리 소개 영상도 들어있었습니다. 배포 다음 날 아침 접속이 몰리는 시간에 사용자 브라우저 연결이 막혀서 "눌러도 반응이 없다"는 문의가 왔습니다.</p>
-    <p>설치 시 받는 걸 진입 스크립트와 CSS만으로 줄이고(76개, 1.3MB), 나머지는 실제로 필요할 때 캐시에 넣도록 바꿨습니다. 정적 자산은 어차피 브라우저 HTTP 캐시가 파일명 해시로 영구 캐싱하고 있어서, 서비스워커 프리캐시는 그 위에 중복으로 얹혀 있던 거였습니다.</p>
-  </div>
-
-  <div class="entry">
-    <div class="proj">공무링크 · 2026.09</div>
-    <h2>같은 버그가 22곳에 복사돼 있었다</h2>
-    <p>무료 회원이 6개월 지난 작업년월을 조회하면 서버가 403을 돌려주는데, 그 응답을 처리하는 코드가 소스 전체에 한 곳도 없었습니다. 호출부들이 응답 코드를 안 보고 바로 배열로 다루려다 보니 그 자리에서 에러가 나고, 로딩 스피너를 끄는 줄까지 못 가서 화면이 영원히 로딩 중으로 남았습니다.</p>
-    <p>같은 가드를 호출하는 곳이 22곳이었는데, 응답을 제대로 확인하는 곳은 딱 한 곳뿐이었습니다. 나머지는 무한로딩이거나, 에러를 조용히 삼키거나, 이유 설명 없이 목록만 비어 있었습니다. 공통 처리 함수를 하나 만들어 22곳 전부(16개 파일)에 적용했습니다.</p>
-  </div>
-
-  <div class="entry">
-    <div class="proj">건설HR · 2026.06 · 단독</div>
-    <h2>0에서 시작하며 가장 먼저 걸러낸 건 제 실수였습니다</h2>
-    <p>신규 서비스를 처음부터 만들면서 초반 며칠은 속도를 내려고 DB 접속 정보를 코드에 바로 넣어뒀습니다. 배포 전에 스스로 점검하다가 알아채고 환경변수로 옮겼습니다. 감출 일은 아니라고 생각해서 그냥 적어둡니다.</p>
-  </div>
-
-  <div class="entry">
-    <div class="proj">ddalkkak · 개인 프로젝트</div>
-    <h2>제가 만든 퍼즐인데 답이 하나가 아니었습니다</h2>
-    <p>직접 만든 퍼즐 게임 문제 181개를 다시 검수하다가, 의도한 것과 다른 답도 나올 수 있는 문제 19개를 찾았습니다. 그중 하나는 시소 그림이 물리 법칙과 반대로 그려져 있었는데, 좌표를 직접 넣어 모멘트를 계산해보니(왼쪽 <span class="num">24</span> : 오른쪽 <span class="num">12</span>) 왼쪽이 내려가야 하는 게 맞았습니다. 그림이 틀린 거였습니다. 좌표를 다시 잡아 정답과 그림을 맞췄습니다.</p>
-    <p>다른 하나는 받침 유무로 갈리는 문제였는데, 예시 단어들이 우연히 "고유어인지"로도 똑같이 갈려서 의도치 않은 규칙으로도 같은 답이 나왔습니다. 두 규칙이 서로 다른 답을 내는 단어를 예시에 넣어서 막았습니다. 정답은 하나도 바꾸지 않았습니다.</p>
-  </div>
-
-  <h3 class="section">참고</h3>
-  <p style="font-size:14.5px;color:var(--muted);max-width:var(--measure);">위 사례 중 절반 이상은 최근에 쓰기 시작한 에이전트 워크플로(원인 조사와 초안 작성을 에이전트가 하고, 원인이 맞는지와 수정 범위를 제가 검토해서 머지)로 처리했습니다. 나머지는 직접 코드를 보고 고쳤습니다.</p>
-
-  <div class="stack">
-    <h3 class="section" style="margin-top:36px;">기술 스택</h3>
-    <div class="row"><b>주력</b> — SvelteKit / Svelte 4·5, TypeScript, MariaDB·MySQL, Node.js</div>
-    <div class="row"><b>실무 경험</b> — C#, Docker·nginx·PM2, Puppeteer/PuppeteerSharp, PG 결제, PWA, Vitest·Playwright, JWT</div>
-    <div class="row"><b>도메인</b> — 4대보험·급여·노무·전자계약·건설 행정, 정부기관 EDI</div>
-    <div class="row" style="margin-top:10px;">React·Vue는 실무로는 안 써봤습니다. 필요하면 빨리 따라잡을 수 있다고 생각은 하는데, 아직 증명은 못 했습니다.</div>
-  </div>
-
-  <div class="stack">
-    <h3 class="section">개인 프로젝트</h3>
-    <div class="row">ddalkkak(두뇌 퍼즐 게임) — <a href="https://github.com/dalgeom/ddalkkak">github.com/dalgeom/ddalkkak</a></div>
-  </div>
-
-  <p class="foot">hyun7219@naver.com · <a href="https://github.com/dalgeom">github.com/dalgeom</a> · 임현진</p>
+  <p class="foot">임현진 · 인하대학교 화학공학과 · 갱신 2026.09</p>
 
 </div>
 
