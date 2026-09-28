@@ -125,7 +125,6 @@
       <div class="metric"><div class="v">21,671건</div><div class="k">보수총액 신고, 이 서비스를 거쳐 처리</div></div>
       <div class="metric"><div class="v">52개</div><div class="k">단독 구축 로컬 에이전트 자동화 엔드포인트</div></div>
       <div class="metric"><div class="v">98.2%</div><div class="k">서비스워커 설치 용량 절감</div></div>
-      <div class="metric"><div class="v">300건</div><div class="k">운영 데이터로 직접 대조 검증</div></div>
     </div>
   </header>
 
@@ -167,24 +166,8 @@
       </div>
     </div>
 
-    <div class="case">
-      <div class="case-tag">급여 계산 · 2026.09</div>
-      <h4>가불금 공제가 배포 하나로 두 배가 됐다</h4>
-      <p>노무관리에 가불금 같은 기타공제 항목을 새로 넣었는데, 며칠 뒤 국민연금 임의가입 처리에서만 공제액이 두 배로 빠진다는 제보가 들어왔습니다. 5만원이어야 할 게 10만원이 빠져 있었습니다.</p>
-      <p>파보니 급여를 확정하는 경로가 두 종류였습니다. 최종 금액을 통째로 계산해서 저장하는 쪽과, "기존 금액에서 얼마를 뺀다"는 식으로 저장하는 쪽. 기타공제를 추가하면서 이 두 경로가 같이 쓰는 SQL에 공제액을 한 번 더 빼는 코드를 넣었는데, 뒤쪽 경로는 이미 그 공제가 반영된 값을 넘기고 있었던 겁니다. SQL에서 억지로 맞추는 대신 최종 금액을 만드는 함수 쪽에서 직접 계산하게 바꿨습니다.</p>
-      <div class="highlight"><b>검증</b> 타입체크·린트·E2E 225건이 그대로 유지되는지 확인 후 반영</div>
-      <div class="case-foot">
-        <span class="badge money">금전 계산 버그</span>
-        <span class="badge ai">AI 워크플로</span>
-      </div>
-    </div>
-
     <h3 class="sub" style="margin-top:26px;">그 외 이 프로젝트에서</h3>
     <div class="mini-list">
-      <div class="mini-item">
-        <b>다른 대행기관 현장 이름이 화면에 보였던 데이터 격리 버그</b>
-        <span>대행기관 경계 없이 근로자 식별번호만으로 조회하던 함수가 원인. 조회 범위를 기관 코드로 제한하고 운영 데이터 300건으로 대조 검증.</span>
-      </div>
       <div class="mini-item">
         <b>붙여넣기로만 재현되는 국적 오판정 버그</b>
         <span>주민번호를 타이핑하면 정상, 붙여넣으면 인덱스가 밀려 오판정. 재현 조건을 특정해 원인 규명, 테스트 14건 추가.</span>
@@ -196,36 +179,6 @@
     </div>
 
     <p class="note">뱃지가 붙은 사례는 최근 만든 에이전트 워크플로(원인 조사·초안 작성은 에이전트, 원인 검토·수정 범위 판단·머지는 직접)로 처리했습니다.</p>
-  </section>
-
-  <section class="proj-block">
-    <h2>현장링크<span class="dot">.</span></h2>
-    <p class="overview">건설 일용직 근로자용 크로스플랫폼 앱. 구글 플레이·앱스토어에 출시돼 있습니다.</p>
-
-    <div class="case">
-      <div class="case-tag">2026.07</div>
-      <h4>로그인 안 해도 남의 체크리스트가 열렸다</h4>
-      <p>현장 근로자 앱 API를 점검하다가 로그인 여부를 확인하지 않는 체크리스트 저장·조회 엔드포인트를 몇 개 찾았습니다. 요청값만 바꾸면 자기 배정 건이 아닌 것도 처리되는 구조였습니다.</p>
-      <p>같이 발견한 건 사진 업로드 쪽 버그였는데, 여러 장 찍으면 같은 파일명으로 저장돼서 앞서 찍은 사진이 덮어써지고 있었습니다. 로그인 가드와 소유권 검증을 넣고, 사진 파일명에 항목 번호를 넣어 분리했습니다.</p>
-      <div class="case-foot">
-        <span class="badge security">인증 우회(IDOR)</span>
-        <span class="badge ai">AI 워크플로</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="proj-block">
-    <h2>건설HR<span class="dot">.</span></h2>
-    <p class="overview">신규 서비스를 0부터 배포 가능한 상태까지 단독으로 구축 중인 제품입니다.</p>
-
-    <div class="case">
-      <div class="case-tag">2026.06 · 단독</div>
-      <h4>0에서 시작하며 가장 먼저 걸러낸 건 제 실수였다</h4>
-      <p>초반 며칠은 속도를 내려고 DB 접속 정보를 코드에 바로 넣어뒀습니다. 배포 전에 스스로 점검하다가 알아채고 환경변수로 옮겼습니다. 감출 일은 아니라고 생각해서 그냥 적어둡니다.</p>
-      <div class="case-foot">
-        <span class="badge">보안 셀프체크</span>
-      </div>
-    </div>
   </section>
 
   <section class="proj-block">
