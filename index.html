@@ -3,243 +3,449 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>임현진 — 개발자 포트폴리오</title>
-<meta name="description" content="4대보험·급여·건설노무 도메인 개발자 임현진의 프로젝트와 문제 해결 기록.">
-<meta property="og:title" content="임현진 — 개발자 포트폴리오">
-<meta property="og:description" content="4대보험·급여·건설노무 도메인 개발자 임현진의 프로젝트와 문제 해결 기록.">
+<title>임현진 포트폴리오</title>
+<meta name="description" content="풀스택 개발자 임현진 — 건설 노무·4대보험 B2B SaaS 3년. 이력서의 핵심 사례 세 가지를 판단과 검증 과정까지 풀어 쓴 포트폴리오.">
+<meta property="og:title" content="임현진 포트폴리오">
+<meta property="og:description" content="건설 노무·4대보험 B2B SaaS 3년 — 핵심 사례 세 가지의 판단과 검증 과정">
 <meta property="og:type" content="website">
-<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
+<link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
 <style>
   :root{
-    --ink:#161A20; --muted:#666D78; --rule:#E7E9EC; --paper:#fff;
-    --accent:#2E5DE0; --accent-soft:#EEF2FD;
-    --bad:#B23B3B; --bad-soft:#FBEDED;
-    --warn:#9A6B00; --warn-soft:#FBF3E2;
-    --good:#137A55; --good-soft:#E7F5EF;
+    --bg:#ffffff; --ink:#1a1d21; --muted:#5b6470; --line:#e3e6ea; --soft:#f5f7f9;
+    --accent:#1f5fbf; --accent-soft:#eaf1fb; --bad:#b3261e; --bad-soft:#fbeceb; --good:#1d7a46; --good-soft:#e6f4ec;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#14171b; --ink:#e6e8eb; --muted:#9aa3ad; --line:#2a2f36; --soft:#1b1f24;
+      --accent:#7fb0ff; --accent-soft:#1c2a3f; --bad:#ff8a80; --bad-soft:#3a1f1d; --good:#6fd49a; --good-soft:#17301f;
+    }
   }
   *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
   body{
-    margin:0; padding:0 28px 110px;
-    font-family:"Pretendard Variable","Pretendard","Apple SD Gothic Neo","Malgun Gothic",-apple-system,sans-serif;
-    color:var(--ink); background:var(--paper);
-    font-size:16.5px; line-height:1.75; -webkit-font-smoothing:antialiased;
-    letter-spacing:-.003em;
+    margin:0; padding:48px 16px 80px; background:var(--bg); color:var(--ink);
+    font-family:"Pretendard Variable","Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    font-size:16px; line-height:1.75; word-break:keep-all; overflow-wrap:break-word;
   }
-  .page{ max-width:720px; margin:0 auto; }
-  .dot{color:var(--accent);}
-
-  header.hero{ padding-top:56px; margin-bottom:8px; }
-  h1{font-size:38px; margin:6px 0 8px; letter-spacing:-.025em; font-weight:800; line-height:1.2;}
-  .role{font-size:15.5px; color:var(--muted); margin-bottom:14px; font-weight:500;}
-  .hero-contact{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;}
-  .hero-contact a{font-size:13.5px; color:var(--muted); text-decoration:none; padding:6px 12px; border:1px solid var(--rule); border-radius:20px; background:#FAFBFC;}
-  .hero-contact a:hover{border-color:var(--accent); color:var(--accent);}
-  .lead{font-size:16.5px; color:#333; max-width:100%; margin-bottom:30px;}
-
-  .metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:12px; overflow:hidden; margin-bottom:56px;}
-  .metric{background:var(--paper); padding:16px;}
-  .metric .v{font-size:22px; font-weight:800; color:var(--accent); letter-spacing:-.02em;}
-  .metric .k{font-size:12px; color:var(--muted); margin-top:4px; line-height:1.4;}
-
-  .about{font-size:16px; color:#333; max-width:100%; margin-bottom:56px; padding:24px 26px; background:#FAFBFC; border:1px solid var(--rule); border-radius:14px;}
-  .about b{color:var(--ink);}
-
-  h2{
-    font-size:22px; font-weight:800; letter-spacing:-.015em;
-    color:var(--ink); margin:0 0 6px;
-    display:flex; align-items:baseline; gap:10px;
-  }
-  .proj-block{margin-bottom:56px;}
-  .proj-block .overview{font-size:14.5px; color:var(--muted); margin-bottom:24px; line-height:1.6;}
-
-  h3.sub{font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0 0 14px;}
-
-  .case{border:1px solid var(--rule); border-radius:14px; padding:26px 28px; margin-bottom:16px;}
-  .case:last-child{margin-bottom:0;}
-  .case-tag{font-size:12.5px; color:var(--muted); font-weight:600; margin-bottom:8px;}
-  .case h4{font-size:18px; font-weight:800; letter-spacing:-.01em; line-height:1.4; margin:0 0 14px;}
-  .case p{font-size:15px; margin-bottom:11px; color:#333;}
-  .case p:last-of-type{margin-bottom:0;}
-  .case code{font-family:ui-monospace,Consolas,monospace; font-size:13.5px; background:var(--accent-soft); padding:1px 6px; border-radius:4px;}
-  .case .highlight{margin-top:14px; padding:13px 16px; background:var(--accent-soft); border-radius:10px; font-size:14.5px; line-height:1.6;}
-  .case .highlight b{color:var(--accent);}
-  .case-foot{display:flex; flex-wrap:wrap; gap:7px; margin-top:16px;}
-  .badge{font-size:12px; font-weight:600; letter-spacing:.02em; padding:5px 11px; border-radius:20px; color:var(--muted); background:#F4F5F7;}
-  .badge.money{color:var(--bad); background:var(--bad-soft);}
-  .badge.security{color:var(--warn); background:var(--warn-soft);}
-  .badge.perf{color:var(--good); background:var(--good-soft);}
-  .badge.ai{color:var(--accent); background:var(--accent-soft);}
-
-  /* 압축 리스트 — 나머지 자잘한 문제들을 한 줄씩 */
-  .mini-list{border-left:2px solid var(--rule); padding-left:20px; margin-top:16px;}
-  .mini-item{margin-bottom:14px; position:relative;}
-  .mini-item:last-child{margin-bottom:0;}
-  .mini-item::before{content:"";position:absolute; left:-24.5px; top:8px; width:6px; height:6px; border-radius:50%; background:var(--rule);}
-  .mini-item b{display:block; font-size:14.5px; font-weight:700; margin-bottom:2px;}
-  .mini-item span{font-size:13.5px; color:var(--muted); line-height:1.6;}
-
-  .note{font-size:13.5px; color:var(--muted); margin-top:18px; line-height:1.7;}
-
-  .stack{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px;}
-  .stack-col .lbl{font-size:13px; font-weight:700; letter-spacing:.02em; margin-bottom:10px;}
-  .stack-col.d .lbl{color:var(--warn);}
-  .stack-col.p .lbl{color:var(--good);}
-  .stack-col.e .lbl{color:var(--accent);}
-  .chips{display:flex; flex-wrap:wrap; gap:7px;}
-  .chip{font-size:13px; padding:5px 11px; background:#F4F5F7; border-radius:20px; color:#333;}
-  .stack-note{font-size:13.5px; color:var(--muted); margin-top:18px; line-height:1.7;}
-
-  .links{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;}
-  .links a{font-size:13.5px; text-decoration:none; color:var(--accent); border:1px solid var(--accent); padding:7px 15px; border-radius:20px; font-weight:600;}
-  .links a:hover{background:var(--accent-soft);}
-
-  .contact{background:var(--ink); color:var(--paper); padding:36px 32px; margin-top:60px; border-radius:16px;}
-  .contact .lbl{font-size:12px; letter-spacing:.1em; text-transform:uppercase; opacity:.6; margin-bottom:16px;}
-  .contact-rows{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px 30px;}
-  .contact-rows .rk{font-size:11px; letter-spacing:.08em; text-transform:uppercase; opacity:.55; margin-bottom:5px;}
-  .contact-rows .rv{font-size:16px;}
-  .contact-rows .rv a{color:var(--paper);}
-
-  .foot{margin-top:26px; font-size:13px; color:var(--muted); text-align:center;}
-
+  .page{max-width:760px; margin:0 auto;}
   a{color:var(--accent);}
-  a:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
-  @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  header h1{font-size:34px; line-height:1.25; margin:0 0 6px;}
+  .role{color:var(--muted); font-size:15px; margin:0 0 20px;}
+  .lead{margin:0 0 26px; font-size:17px;}
+  .metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px 22px; margin:0 0 24px;}
+  .metric{border-top:2px solid var(--accent); padding-top:10px;}
+  .metric .v{font-size:26px; font-weight:700; line-height:1.2;}
+  .metric .k{font-size:13.5px; color:var(--muted); line-height:1.5; margin-top:4px;}
+  .contact{font-size:15px; margin:0 0 8px;}
+  .note{font-size:13.5px; color:var(--muted); margin:0;}
+
+  nav.toc{margin:34px 0 0; padding:16px 20px; background:var(--soft); border-radius:8px;}
+  nav.toc ol{margin:0; padding-left:20px;}
+  nav.toc li{margin:2px 0; font-size:15px;}
+
+  section.case{margin-top:64px; padding-top:30px; border-top:1px solid var(--line);}
+  .kicker{font-size:13.5px; font-weight:600; color:var(--accent); margin:0 0 6px;}
+  h2{font-size:24px; line-height:1.4; margin:0 0 18px;}
+  h3{font-size:16.5px; margin:28px 0 8px;}
+  p{margin:0 0 12px;}
+  ul{margin:0 0 12px; padding-left:20px;}
+  li{margin:4px 0;}
+
+  dl.summary{display:grid; grid-template-columns:84px 1fr; gap:6px 14px; margin:0 0 8px; padding:16px 18px; background:var(--soft); border-radius:8px; font-size:15px;}
+  dl.summary dt{color:var(--muted); font-weight:600;}
+  dl.summary dd{margin:0;}
+
+  figure{margin:20px 0; break-inside:avoid;}
+  figcaption{font-size:13px; color:var(--muted); margin-top:8px;}
+  .fig-scroll{overflow-x:auto;}
+  .fig-scroll svg{min-width:620px;}
+  svg{display:block; width:100%; height:auto; font-family:inherit;}
+  svg text{fill:var(--ink); font-size:12px;}
+  svg .mut{fill:var(--muted);}
+  svg .b{font-weight:700;}
+  svg .t-bad{fill:var(--bad);}
+  svg .t-good{fill:var(--good);}
+  svg .ax{stroke:var(--line); stroke-width:1;}
+  svg .mid{stroke:var(--muted); stroke-width:1; stroke-dasharray:3 3;}
+  svg .life{stroke:var(--muted); stroke-width:1; stroke-dasharray:4 4;}
+  svg .ln{stroke:var(--ink); stroke-width:1.4; fill:none;}
+  svg .ln-d{stroke:var(--ink); stroke-width:1.4; fill:none; stroke-dasharray:5 4;}
+  svg .ln-bad{stroke:var(--bad); stroke-width:1.6; fill:none; stroke-dasharray:5 4;}
+  svg .dot{fill:var(--ink);}
+  svg .hollow{fill:var(--bg); stroke:var(--muted); stroke-width:1.4;}
+  svg .bar-bad{fill:var(--bad-soft); stroke:var(--bad); stroke-width:1.2;}
+  svg .bar-good{fill:var(--good-soft); stroke:var(--good); stroke-width:1.2;}
+  svg .act{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.2;}
+  svg .wait{fill:var(--soft); stroke:var(--muted); stroke-width:1;}
+  svg .mk{fill:var(--ink);}
+  svg .x{stroke:var(--bad); stroke-width:2.2;}
+  .seq{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .seq svg{border:1px solid var(--line); border-radius:8px;}
+
+  .bars{display:grid; grid-template-columns:70px 1fr auto; gap:10px 12px; align-items:center; font-size:14px;}
+  .track{height:18px; background:var(--soft); border-radius:3px; overflow:hidden;}
+  .fill{height:100%; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  .fill.before{background:var(--bad); width:100%;}
+  .fill.after{background:var(--good); width:1.77%; min-width:3px;}
+  .bars .bv{font-variant-numeric:tabular-nums; white-space:nowrap;}
+
+  ol.rules{padding-left:22px;}
+  .aside{font-size:14.5px; color:var(--muted);}
+
+  footer{margin-top:64px; padding-top:20px; border-top:1px solid var(--line); font-size:14px; color:var(--muted);}
+
+  @media (max-width:600px){
+    body{padding-top:32px;}
+    header h1{font-size:28px;}
+    h2{font-size:21px;}
+    dl.summary{grid-template-columns:1fr; gap:0;}
+    dl.summary dd{margin-bottom:8px;}
+    .seq{grid-template-columns:1fr;}
+    .bars{grid-template-columns:60px 1fr; }
+    .bars .bv{grid-column:2; margin-top:-6px; font-size:13px; color:var(--muted);}
+  }
+
+  @media print{
+    :root, :root:not([data-theme="light"]){
+      --bg:#fff; --ink:#111; --muted:#555; --line:#ccc; --soft:#f3f4f6;
+      --accent:#1f5fbf; --accent-soft:#eaf1fb; --bad:#b3261e; --bad-soft:#fbeceb; --good:#1d7a46; --good-soft:#e6f4ec;
+    }
+    @page{size:A4; margin:14mm 15mm;}
+    body{padding:0; font-size:10pt; line-height:1.65;}
+    .page{max-width:none;}
+    header h1{font-size:22pt;}
+    .lead{font-size:11pt;}
+    .metric .v{font-size:16pt;}
+    nav.toc{break-inside:avoid;}
+    section.case{break-before:page; margin-top:0; padding-top:0; border-top:0;}
+    #ai, #etc{break-before:auto; margin-top:28pt; padding-top:16pt; border-top:1px solid var(--line);}
+    h2{font-size:15pt;}
+    h3{font-size:11pt; break-after:avoid;}
+    dl.summary, .bars, .seq{break-inside:avoid;}
+    .fig-scroll{overflow:visible;}
+    .fig-scroll svg{min-width:0;}
+    dl.summary, nav.toc{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    a{color:var(--ink); text-decoration:none;}
+  }
 </style>
 </head>
 <body>
-
 <div class="page">
 
-  <header class="hero">
-    <h1>임현진<span class="dot">.</span></h1>
-    <div class="role">4대보험·급여·건설노무 도메인 · 3년 3개월차</div>
-    <div class="hero-contact">
-      <a href="mailto:hyun7219@naver.com">hyun7219@naver.com</a>
-      <a href="https://github.com/dalgeom">github.com/dalgeom</a>
-    </div>
-    <p class="lead">경력·수치 요약은 이력서에 있습니다. 여기는 제가 맡은 프로젝트별로, 실제로 부딪혀서
-      풀어낸 문제들을 정리했습니다.</p>
-
-    <div class="metrics">
-      <div class="metric"><div class="v">21,671건</div><div class="k">보수총액 신고, 이 서비스를 거쳐 처리</div></div>
-      <div class="metric"><div class="v">52개</div><div class="k">단독 구축 로컬 에이전트 자동화 엔드포인트</div></div>
-      <div class="metric"><div class="v">98.2%</div><div class="k">서비스워커 설치 용량 절감</div></div>
-    </div>
-  </header>
-
-  <p class="about"><b>어떻게 문제를 푸는지.</b> 버그를 마주치면 먼저 재현 조건부터 좁힙니다. "가끔 안 된다"를
-    "이 조건에서만 안 된다"로 바꾸고 나면, 원인은 대체로 코드 안에 이미 있습니다. 그리고 한 곳을 고칠 땐
-    같은 실수가 다른 곳에도 있는지부터 확인합니다 — 아래 사례 중 하나(공무링크)는 정확히 그래서 22곳을
-    한꺼번에 고친 경우입니다.</p>
-
-  <section class="proj-block">
-    <h2>공무헬퍼<span class="dot">.</span></h2>
-    <p class="overview">정부기관 사이트·설치형 프로그램은 인증서·보안모듈 때문에 서버에서 원격 자동화가 불가능합니다. 사용자 PC에 상주하며 웹의 명령을 받아 대신 조작하는 로컬 에이전트를 C#으로 단독 설계·구현했습니다(52개 자동화 엔드포인트, 3년째 운영).</p>
-
-    <div class="case">
-      <div class="case-tag">아키텍처 판단 · 공무링크 연동</div>
-      <h4>로컬 에이전트와의 통신이 5분에서 끊겼다</h4>
-      <p>50~150명을 한 번에 자동화 처리시키면, 에이전트가 끝낼 때까지 브라우저가 단일 요청으로 대기하는 구조라 5분을 넘기면 연결이 끊겼습니다. 클라이언트가 작업 ID를 발급하고 2초 간격으로 진행 건수만 조회하는 폴링으로 바꿔, 에이전트는 백그라운드에서 계속 처리하고 화면은 상태만 따라가게 했습니다.</p>
-      <p>WebSocket 대신 폴링을 택한 건, 에이전트가 단순 HttpListener 기반이라 실시간 연결 계층을 새로 얹는 비용 대비 이득이 없다고 판단했기 때문입니다.</p>
-      <div class="highlight"><b>결과</b> 150명 이상 규모의 일괄 처리가 이 구조로 운영되고 있습니다</div>
-      <div class="case-foot">
-        <span class="badge">아키텍처 트레이드오프</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="proj-block">
-    <h2>공무링크<span class="dot">.</span></h2>
-    <p class="overview">건설 노무·행정 자동화 SaaS. 회원사 335곳이 쓰는 회사 주력 제품이고, 3년째 개발·운영을 맡고 있습니다.</p>
-
-    <h3 class="sub">대표 사례</h3>
-
-    <div class="case">
-      <div class="case-tag">요금제 시스템 · 2026.09</div>
-      <h4>같은 버그가 22곳에 복사돼 있었다</h4>
-      <p>무료 회원이 6개월 지난 작업년월을 조회하면 서버가 403을 돌려주는데, 그 응답을 처리하는 코드가 소스 전체에 한 곳도 없었습니다. 호출부들이 응답 코드를 안 보고 바로 배열로 다루려다 보니 그 자리에서 에러가 나고, 로딩 스피너를 끄는 줄까지 못 가서 화면이 영원히 로딩 중으로 남았습니다.</p>
-      <p>같은 가드를 호출하는 곳이 22곳이었는데, 응답을 제대로 확인하는 곳은 한 곳뿐이었습니다. 공통 처리 함수를 하나 만들어 22곳(16개 파일) 전부에 적용했습니다. 이 경험이, 지금 진행 중인 요금제(Free/Lite/Pro/Max) 전환에서 등급 판정 로직을 처음부터 한 곳에 모아 설계한 이유이기도 합니다.</p>
-      <div class="case-foot">
-        <span class="badge">시스템적 결함</span>
-        <span class="badge ai">AI 워크플로</span>
-      </div>
-    </div>
-
-    <h3 class="sub" style="margin-top:26px;">그 외 이 프로젝트에서</h3>
-    <div class="mini-list">
-      <div class="mini-item">
-        <b>붙여넣기로만 재현되는 국적 오판정 버그</b>
-        <span>주민번호를 타이핑하면 정상, 붙여넣으면 인덱스가 밀려 오판정. 재현 조건을 특정해 원인 규명, 테스트 14건 추가.</span>
-      </div>
-      <div class="mini-item">
-        <b>배포 다음 날 아침마다 접속이 막히던 문제</b>
-        <span>서비스워커 설치 용량을 358개 71.6MB → 76개 1.3MB로 축소(98.2%↓). 브라우저 HTTP 캐시와 중복되던 프리캐시를 걷어냄.</span>
-      </div>
-    </div>
-
-    <p class="note">뱃지가 붙은 사례는 최근 만든 에이전트 워크플로(원인 조사·초안 작성은 에이전트, 원인 검토·수정 범위 판단·머지는 직접)로 처리했습니다.</p>
-  </section>
-
-  <section class="proj-block">
-    <h2><span>개인 프로젝트</span></h2>
-    <p class="overview">ddalkkak — 두뇌 퍼즐 웹게임. 게임 로직과 문제은행 무결성을 Vitest로 보증하고, 출시 후에도
-      콘텐츠 확장·SEO·GA 분석·유튜브 쇼츠 자동 생성까지 직접 붙이며 운영 중입니다.</p>
-
-    <div class="case">
-      <div class="case-tag">2026.09</div>
-      <h4>제가 만든 퍼즐인데 답이 하나가 아니었다</h4>
-      <p>직접 만든 퍼즐 게임 문제 181개를 다시 검수하다가, 의도한 것과 다른 답도 나올 수 있는 문제 19건을 찾았습니다. 그중 하나는 시소 그림이 물리 법칙과 반대로 그려져 있었는데, 좌표를 직접 넣어 모멘트를 계산해보니(왼쪽 24 : 오른쪽 12) 왼쪽이 내려가야 하는 게 맞았습니다. 그림이 틀린 거였습니다.</p>
-      <p>다른 하나는 받침 유무로 갈리는 문제였는데, 예시 단어들이 우연히 "고유어인지"로도 똑같이 갈려서 의도치 않은 규칙으로도 같은 답이 나왔습니다. 두 규칙이 서로 다른 답을 내는 단어를 예시에 추가해서 막았습니다.</p>
-      <div class="highlight"><b>원칙</b> 정답은 하나도 바꾸지 않고, 그림·예시 쪽만 고쳐 유일한 답을 유지</div>
-      <div class="case-foot">
-        <span class="badge">개인 프로젝트</span>
-        <span class="badge ai">AI 워크플로</span>
-      </div>
-    </div>
-    <div class="links"><a href="https://github.com/dalgeom/ddalkkak">github.com/dalgeom/ddalkkak</a></div>
-  </section>
-
-  <section class="proj-block">
-    <h2>기술 스택<span class="dot">.</span></h2>
-    <div class="stack">
-      <div class="stack-col d">
-        <div class="lbl">도메인</div>
-        <div class="chips">
-          <span class="chip">4대보험</span><span class="chip">급여·노무</span><span class="chip">전자계약</span>
-          <span class="chip">건설 행정</span><span class="chip">정부기관 EDI</span>
-        </div>
-      </div>
-      <div class="stack-col p">
-        <div class="lbl">주력</div>
-        <div class="chips">
-          <span class="chip">SvelteKit</span><span class="chip">Svelte 4·5</span><span class="chip">TypeScript</span>
-          <span class="chip">MariaDB / MySQL</span><span class="chip">Node.js</span>
-        </div>
-      </div>
-      <div class="stack-col e">
-        <div class="lbl">실무 투입 경험</div>
-        <div class="chips">
-          <span class="chip">C#</span><span class="chip">Docker</span><span class="chip">nginx</span><span class="chip">PM2</span>
-          <span class="chip">Puppeteer</span><span class="chip">PG 결제</span><span class="chip">PWA</span>
-          <span class="chip">Vitest</span><span class="chip">Playwright</span><span class="chip">JWT</span>
-        </div>
-      </div>
-    </div>
-    <p class="stack-note">React·Vue는 실무로는 안 써봤습니다. 컴포넌트·상태 관리 개념은 SvelteKit과 겹치는 부분이 있어서, 필요하면 짧은 시간 안에 따라잡을 수 있다고 보고 있습니다.</p>
-  </section>
-
-  <div class="contact">
-    <div class="lbl">Contact</div>
-    <div class="contact-rows">
-      <div><div class="rk">Email</div><div class="rv"><a href="mailto:hyun7219@naver.com">hyun7219@naver.com</a></div></div>
-      <div><div class="rk">GitHub</div><div class="rv"><a href="https://github.com/dalgeom">github.com/dalgeom</a></div></div>
-    </div>
+<header>
+  <h1>임현진</h1>
+  <p class="role">풀스택 개발자 · 3년 · SvelteKit · TypeScript · MariaDB · C#</p>
+  <p class="lead">건설 노무·4대보험 B2B SaaS를 3년간 만들어 왔고, 지금은 동료와 2인 개발 체제로 운영하고 있습니다. 이 페이지는 이력서의 핵심 사례 세 가지를, 무엇을 고민했고 어떻게 확인했는지까지 풀어 쓴 것입니다.</p>
+  <div class="metrics">
+    <div class="metric"><div class="v">450곳 이상</div><div class="k">공무링크 가입 사업장<br>(4대보험 사무대행기관 10곳 별도)</div></div>
+    <div class="metric"><div class="v">53개</div><div class="k">공무헬퍼(PC 에이전트)<br>자동화 엔드포인트</div></div>
+    <div class="metric"><div class="v">98.2%</div><div class="k">서비스워커 설치 시<br>다운로드 감소</div></div>
   </div>
+  <p class="contact"><a href="mailto:hyun7219@naver.com">hyun7219@naver.com</a> · <a href="https://github.com/dalgeom">https://github.com/dalgeom</a></p>
+  <p class="note">회사 코드와 운영 화면은 싣지 않았습니다. 그림은 직접 다시 그렸고, 그림 속 시각·인원 같은 예시 값은 설명을 위해 만든 값입니다.</p>
+</header>
 
-  <p class="foot">임현진 · 인하대학교 화학공학과 · 갱신 2026.09</p>
+<nav class="toc" aria-label="목차">
+  <ol>
+    <li><a href="#case1">새벽 출근 기록이 전날로 넘어가던 공수 전환 규칙 재설계</a> — 공무링크</li>
+    <li><a href="#case2">서비스워커 장애 두 번, 설치 시 다운로드 98.2% 감소</a> — 공무링크</li>
+    <li><a href="#case3">끊기던 대량 자동화를 작업 단위 진행률 조회로 전환</a> — 공무헬퍼</li>
+    <li><a href="#ddalkkak">딸깍: AI와 만든 퍼즐의 답이 하나인지 검증하기</a> — 개인 프로젝트</li>
+    <li><a href="#ai">AI 활용 노트</a></li>
+    <li><a href="#etc">그 외 맡은 제품</a></li>
+  </ol>
+</nav>
+
+<!-- 사례 1 -->
+<section class="case" id="case1">
+  <p class="kicker">사례 1 · 공무링크 · 2026.08 ~ 09</p>
+  <h2>새벽 출근 기록이 전날 근무로 넘어가던 규칙을 다시 설계했다</h2>
+  <dl class="summary">
+    <dt>제품</dt><dd>공무링크 — 건설 노무·4대보험 행정 B2B SaaS (2인 개발)</dd>
+    <dt>맡은 일</dt><dd>원인 추적, 판정 규칙 설계, 구현과 검증 (구현은 Claude Code와 함께)</dd>
+    <dt>기술</dt><dd>SvelteKit · TypeScript · MariaDB</dd>
+    <dt>결과</dt><dd>잘못 계산되던 날이 모두 정상 계산되는 것을 운영 데이터로 확인, 회귀 테스트 12건</dd>
+  </dl>
+
+  <h3>배경</h3>
+  <p>건설 현장 근로자는 NFC·QR로 출퇴근을 태그합니다. 공무링크는 이 태그를 날짜별 근무시간으로 묶고, 공수(건설 현장의 하루 근무 단위)로 바꿔 보여 줍니다. 태그 기록에는 출근·퇴근 구분이 없고, 태그한 시각과 방식만 남습니다.</p>
+
+  <h3>문제</h3>
+  <p>"출퇴근 기록이 다 안 보인다"는 고객 문의에서 시작했습니다. 종전 규칙은 "새벽 기준 시각 이전 태그는 무조건 전날 근무"라는 한 줄이었는데, 여름철 건설 주간조는 새벽 5시대 출근이 흔해서 출근 태그가 통째로 전날로 넘어가고 있었습니다. 운영 데이터를 날짜별로 대조해 보니 세 가지 증상이 함께 나왔습니다.</p>
+  <ul>
+    <li>태그가 멀쩡히 두 개인데 화면에서 빈칸이 되는 날</li>
+    <li>'퇴근 ~ 다음 날 출근' 간격이 근무시간으로 잡혀 10시간 근무가 13~23시간으로 부풀려지는 날</li>
+    <li>근무가 없는 날에 가짜 근무가 생기는 날</li>
+  </ul>
+
+  <figure>
+    <div class="fig-scroll">
+    <svg viewBox="0 0 720 230" role="img" aria-label="같은 태그 네 개를 종전 규칙과 주간 규칙으로 묶은 결과 비교">
+      <text x="255" y="14" text-anchor="middle" class="b">8/31</text>
+      <text x="545" y="14" text-anchor="middle" class="b">9/1</text>
+      <line x1="110" y1="38" x2="690" y2="38" class="ax"/>
+      <g class="mut">
+        <text x="139" y="31" text-anchor="middle" class="mut">06시</text>
+        <text x="226" y="31" text-anchor="middle" class="mut">12시</text>
+        <text x="313" y="31" text-anchor="middle" class="mut">18시</text>
+        <text x="400" y="31" text-anchor="middle" class="mut">자정</text>
+        <text x="487" y="31" text-anchor="middle" class="mut">06시</text>
+        <text x="574" y="31" text-anchor="middle" class="mut">12시</text>
+        <text x="661" y="31" text-anchor="middle" class="mut">18시</text>
+      </g>
+      <line x1="400" y1="40" x2="400" y2="222" class="mid"/>
+
+      <text x="8" y="74" class="b">실제 태그</text>
+      <circle cx="134.2" cy="70" r="5" class="dot"/>
+      <circle cx="285.2" cy="70" r="5" class="dot"/>
+      <circle cx="485.1" cy="70" r="5" class="dot"/>
+      <circle cx="632.5" cy="70" r="5" class="dot"/>
+      <text x="134.2" y="92" text-anchor="middle">05:40</text>
+      <text x="285.2" y="92" text-anchor="middle">16:05</text>
+      <text x="485.1" y="92" text-anchor="middle">05:52</text>
+      <text x="632.5" y="92" text-anchor="middle">16:02</text>
+
+      <text x="8" y="134" class="b">종전 규칙</text>
+      <circle cx="134.2" cy="130" r="5" class="hollow"/>
+      <rect x="285.2" y="122" width="199.9" height="16" rx="2" class="bar-bad"/>
+      <text x="385" y="116" text-anchor="middle" class="t-bad b">8/31 근무 13시간 47분</text>
+      <circle cx="632.5" cy="130" r="5" class="hollow"/>
+      <text x="112" y="158" class="mut">05:40은 8/30으로 넘어감</text>
+      <text x="690" y="158" text-anchor="end" class="mut">9/1은 16:02 하나만 남음</text>
+
+      <text x="8" y="194" class="b">주간 규칙</text>
+      <rect x="134.2" y="182" width="151" height="16" rx="2" class="bar-good"/>
+      <rect x="485.1" y="182" width="147.4" height="16" rx="2" class="bar-good"/>
+      <text x="209.7" y="216" text-anchor="middle" class="t-good b">10시간 25분</text>
+      <text x="558.8" y="216" text-anchor="middle" class="t-good b">10시간 10분</text>
+    </svg>
+    </div>
+    <figcaption>같은 태그 네 개를 두 규칙으로 묶은 결과 (예시 값). 종전 규칙은 새벽 태그를 무조건 전날로 넘겨 '퇴근 ~ 다음 날 출근'을 하루 근무로 계산했다.</figcaption>
+  </figure>
+
+  <h3>판단</h3>
+  <p>문제는 계산이 아니라 <b>어느 날짜의 근무로 볼지</b>였습니다. 기록에 출근·퇴근 구분이 없으니, 04:00·18:00에 찍힌 야간조와 05:52·16:02에 찍힌 주간조를 시각만으로는 구분할 수 없습니다. 그래서 시각이 아니라 그날 기록의 구성으로 판정하는 주간 규칙을 새로 만들었습니다. 자정을 넘겨 퇴근하는 현장을 위해 종전 동작은 '야간 근무 현장' 옵션으로 남겨, 현장이 고르게 했습니다.</p>
+
+  <h3>설계와 구현</h3>
+  <ol class="rules">
+    <li>그날 태그가 2개 이상이면 그날 근무로 확정합니다. 시각은 보지 않습니다.</li>
+    <li>1개뿐이고 새벽이면, 전날 근무가 끝나지 않았을 때만 전날로 넘깁니다.</li>
+    <li>그 밖에 1개뿐이면 '퇴근없음'으로 표시합니다. 종전에는 빈칸이라 사용자가 태그 누락을 알아챌 방법이 없었습니다.</li>
+    <li>야간 근무 현장은 종전처럼 새벽 기준 시각 이전 태그를 전날 근무로 봅니다.</li>
+  </ol>
+  <p>계산 로직은 화면 코드에서 떼어 별도 모듈로 분리해 단위 테스트가 가능하게 했고, 운영에서 문제가 된 태그 패턴으로 회귀 테스트 12건을 만들었습니다.</p>
+
+  <h3>이어진 요청: "휴게 2시간을 빼고 공수를 보고 싶다"</h3>
+  <p>계산식에 휴게 차감을 넣는 대신, 현장별로 '1공수 기준 재실시간'을 정하게 했습니다. 공수 계산은 결국 "1공수 = 재실 N시간" 한 줄이고, "07:00~17:00 근무에 휴게 2시간"은 "재실 10시간이 우리 현장의 1공수"라는 뜻입니다. 휴게는 이미 그 10시간 안에 있습니다.</p>
+  <ul>
+    <li>휴게를 빼는 식은 종일 근무에서는 결과가 같지만 짧은 날에 틀립니다. 재실 4시간이면 0.2공수, 2시간이면 0, 그보다 짧으면 음수가 됩니다.</li>
+    <li>반나절 근무에서 휴게 2시간을 통째로 빼는 것은 근로기준법의 휴게 기준(4시간 근로 시 30분)과도 맞지 않습니다.</li>
+    <li>계산식을 바꾸면 이미 쓰고 있는 현장 전체가 영향을 받습니다. 새 설정의 기본값을 종전 값과 같게 두어 기존 현장의 결과는 그대로입니다.</li>
+    <li>입력은 고객이 아는 말로 받습니다. '0.1공수당 분'이 아니라 '1공수 기준 재실시간(시:분)'으로 입력하고, 실제 저장될 값을 그 자리에서 보여 줍니다.</li>
+  </ul>
+
+  <h3>결과</h3>
+  <p>잘못 계산되던 날이 모두 정상 계산되는 것을 운영 데이터로 확인했습니다. 태그가 하나뿐인 날은 '퇴근없음'으로 드러나, 현장에서 누락을 바로 알 수 있게 됐습니다.</p>
+
+  <h3>한계</h3>
+  <p>야간 근무 여부는 현장이 직접 골라야 합니다. 기록만으로는 판정할 수 없기 때문입니다. 1공수 기준은 10분 단위로 받습니다. 계산부가 정수로 처리해 소수가 잘리기 때문인데, 실무에서 쓰는 정시·30분 단위에서는 제약이 되지 않습니다.</p>
+</section>
+
+<!-- 사례 2 -->
+<section class="case" id="case2">
+  <p class="kicker">사례 2 · 공무링크 · 2025.12 / 2026.09</p>
+  <h2>서비스워커 장애를 두 번 고치고, 설치 시 다운로드를 98.2% 줄였다</h2>
+  <dl class="summary">
+    <dt>제품</dt><dd>공무링크 (서비스워커로 화면 파일을 캐시하는 웹앱)</dd>
+    <dt>맡은 일</dt><dd>두 번 모두 원인 분석과 수정, 1차 때 제가 낸 회귀도 직접 수정 (2차는 Claude Code와 함께)</dd>
+    <dt>기술</dt><dd>Service Worker · Cache Storage · HTTP 캐시</dd>
+    <dt>결과</dt><dd>설치 시 다운로드 358개 71.57MB → 76개 1.27MB</dd>
+  </dl>
+
+  <h3>배경</h3>
+  <p>공무링크는 서비스워커로 화면 파일을 캐시합니다. 정부기관 신고 자동화를 위해 사용자 PC의 공무헬퍼(사례 3)를 로컬 포트로 호출하기도 합니다.</p>
+
+  <h3>1차 장애 (2025.12): 헬퍼 요청까지 가로챈 서비스워커</h3>
+  <p>서비스워커가 공무헬퍼로 가는 요청까지 가로채고 있어서, 헬퍼 호출이 실패하면 본래 오류 대신 빈 503 응답이 돌아갔습니다. 헬퍼 포트로 가는 요청은 건너뛰고 GET 요청만 다루도록 서비스워커를 다시 구성했습니다.</p>
+
+  <h3>제가 만든 회귀</h3>
+  <p>이때 넣은 '새 버전 감지 시 새로고침'이 기존의 '설치 즉시 활성화' 설정과 겹쳐, 로그인 화면이 끝없이 새로고침됐습니다. 즉시 활성화를 없애고 새로고침을 세션당 1회로 제한해 1주일 만에 고쳤습니다.</p>
+
+  <h3>2차 장애 (2026.09): 배포 다음 날 아침마다 "클릭해도 반응이 없다"</h3>
+  <p>서비스워커가 설치될 때 파일 358개(71.57MB)를 한꺼번에 받고 있었습니다. 캐시 이름에 버전이 들어 있어 배포할 때마다 처음부터 다시 받았고, 그 안에는 대다수 회원이 열지 않는 43.6MB 소개 영상도 있었습니다. 배포 다음 날 첫 접속이 몰리는 아침에 이 다운로드가 브라우저 연결을 막고 있었습니다.</p>
+
+  <h3>판단</h3>
+  <p>파일명에 해시가 붙은 정적 파일은 이미 1년짜리 브라우저 캐시(<code>Cache-Control: max-age=31536000, immutable</code>)로 내려가고 있었습니다. 브라우저가 이미 같은 일을 하고 있으니, 설치 때 전부 미리 받는 것은 중복이라고 봤습니다.</p>
+
+  <h3>구현</h3>
+  <ul>
+    <li>설치 때는 앱 뼈대(진입 스크립트 2개, CSS 73개)와 오류 화면만 받습니다.</li>
+    <li>나머지 70.30MB는 실제로 요청될 때 캐시에 넣습니다. 기존 요청 처리 로직이 이미 캐시에 없는 파일을 채워 넣고 있었습니다.</li>
+    <li>파일 하나만 실패해도 설치 전체가 실패하던 일괄 등록을 파일별 처리로 바꿨습니다. 뼈대를 못 받아 서비스워커가 아예 붙지 않는 것보다, 받은 것만 넣고 나머지를 요청 때 채우는 편이 낫다고 봤습니다.</li>
+  </ul>
+
+  <h3>결과</h3>
+  <figure>
+    <div class="bars" role="img" aria-label="설치 시 다운로드 358개 71.57MB에서 76개 1.27MB로 감소">
+      <span>바꾸기 전</span><div class="track"><div class="fill before"></div></div><span class="bv">358개 · 71.57MB</span>
+      <span>바꾼 뒤</span><div class="track"><div class="fill after"></div></div><span class="bv">76개 · 1.27MB</span>
+    </div>
+    <figcaption>서비스워커 설치 시 내려받는 양. 98.2% 감소.</figcaption>
+  </figure>
+
+  <h3>배운 점</h3>
+  <p>서비스워커 캐시가 브라우저 캐시와 역할이 겹치는지부터 확인해야 한다는 것, 그리고 캐시·업데이트 방식을 바꿀 때는 로그인처럼 새로고침이 걸린 흐름까지 함께 확인해야 한다는 것입니다. 1차 때의 회귀가 바로 그 확인을 빠뜨린 결과였습니다.</p>
+</section>
+
+<!-- 사례 3 -->
+<section class="case" id="case3">
+  <p class="kicker">사례 3 · 공무헬퍼 · 2024.12 ~ 2026.09</p>
+  <h2>끝날 때까지 기다리던 대량 자동화를 작업 단위 진행률 조회로 바꿨다</h2>
+  <dl class="summary">
+    <dt>제품</dt><dd>공무헬퍼 — 사용자 PC에 설치되는 C# 에이전트. 동료가 만든 초기 버전을 넘겨받아 이후 개발·운영 전담</dd>
+    <dt>맡은 일</dt><dd>구조 변경 3단계: 분할 → 작업 ID·진행률 조회 → 진행률 추적 모듈 분리</dd>
+    <dt>기술</dt><dd>C# (.NET 7, WinForms) · HttpListener · SvelteKit</dd>
+    <dt>결과</dt><dd>150명 이상 일괄 처리도 끊김 없이 운영 중</dd>
+  </dl>
+
+  <h3>배경</h3>
+  <p>공무링크는 웹이라 마우스·키보드 제어나 브라우저 자동화 권한이 없습니다. 그래서 외부 기관 사이트의 신고 과정은 사용자 PC에 설치된 공무헬퍼가 로컬 포트로 요청을 받아 대신 처리합니다. 대상은 근로복지공단 토탈서비스(고용·산재보험 신고 사이트), 건강보험·국민연금 전자신고(EDI), 건설근로자 전자카드이고, 자동화 엔드포인트는 53개입니다.</p>
+
+  <h3>문제</h3>
+  <p>외국인 근로자 정보를 공단 시스템과 대조하는 작업은, 브라우저가 한 번의 요청이 끝날 때까지 기다리는 구조였습니다. 50~150명을 한 번에 처리하면 5분을 넘겨 연결이 끊겼습니다.</p>
+
+  <figure>
+    <div class="seq">
+      <svg viewBox="0 0 340 250" role="img" aria-label="바꾸기 전: 요청 하나로 끝까지 기다리다 5분을 넘기면 연결이 끊김">
+        <defs><marker id="ah3a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk"/></marker></defs>
+        <text x="12" y="20" class="b">바꾸기 전</text>
+        <text x="70" y="44" text-anchor="middle">공무링크(브라우저)</text>
+        <text x="270" y="44" text-anchor="middle">공무헬퍼(PC)</text>
+        <line x1="70" y1="52" x2="70" y2="242" class="life"/>
+        <line x1="270" y1="52" x2="270" y2="242" class="life"/>
+        <line x1="70" y1="74" x2="261" y2="74" class="ln" marker-end="url(#ah3a)"/>
+        <text x="166" y="68" text-anchor="middle">대조 요청 (150명)</text>
+        <rect x="263" y="74" width="14" height="150" class="act"/>
+        <rect x="64" y="74" width="12" height="130" class="wait"/>
+        <text x="86" y="140" class="mut">응답을 기다림</text>
+        <line x1="262" y1="204" x2="80" y2="204" class="ln-bad"/>
+        <line x1="161" y1="195" x2="179" y2="213" class="x"/>
+        <line x1="179" y1="195" x2="161" y2="213" class="x"/>
+        <text x="170" y="236" text-anchor="middle" class="t-bad b">5분을 넘기면 연결 끊김</text>
+      </svg>
+      <svg viewBox="0 0 340 250" role="img" aria-label="바꾼 뒤: 작업 ID를 받고 2초마다 진행률만 조회">
+        <defs><marker id="ah3b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk"/></marker></defs>
+        <text x="12" y="20" class="b">바꾼 뒤</text>
+        <text x="70" y="44" text-anchor="middle">공무링크(브라우저)</text>
+        <text x="270" y="44" text-anchor="middle">공무헬퍼(PC)</text>
+        <line x1="70" y1="52" x2="70" y2="242" class="life"/>
+        <line x1="270" y1="52" x2="270" y2="242" class="life"/>
+        <line x1="70" y1="68" x2="261" y2="68" class="ln" marker-end="url(#ah3b)"/>
+        <text x="166" y="62" text-anchor="middle">대조 요청</text>
+        <rect x="263" y="68" width="14" height="166" class="act"/>
+        <line x1="263" y1="90" x2="79" y2="90" class="ln-d" marker-end="url(#ah3b)"/>
+        <text x="166" y="85" text-anchor="middle" class="b">작업 ID 즉시 반환</text>
+        <line x1="70" y1="120" x2="261" y2="120" class="ln" marker-end="url(#ah3b)"/>
+        <text x="166" y="115" text-anchor="middle" class="mut">진행률?</text>
+        <line x1="263" y1="136" x2="79" y2="136" class="ln-d" marker-end="url(#ah3b)"/>
+        <text x="166" y="131" text-anchor="middle">37 / 150</text>
+        <line x1="70" y1="166" x2="261" y2="166" class="ln" marker-end="url(#ah3b)"/>
+        <text x="166" y="161" text-anchor="middle" class="mut">진행률?</text>
+        <line x1="263" y1="182" x2="79" y2="182" class="ln-d" marker-end="url(#ah3b)"/>
+        <text x="166" y="177" text-anchor="middle">112 / 150</text>
+        <line x1="70" y1="212" x2="261" y2="212" class="ln" marker-end="url(#ah3b)"/>
+        <text x="166" y="207" text-anchor="middle" class="mut">진행률?</text>
+        <line x1="263" y1="228" x2="79" y2="228" class="ln-d" marker-end="url(#ah3b)"/>
+        <text x="166" y="223" text-anchor="middle" class="t-good b">완료 150 / 150</text>
+        <text x="62" y="170" text-anchor="end" class="mut">2초</text>
+        <text x="62" y="185" text-anchor="end" class="mut">마다</text>
+      </svg>
+    </div>
+    <figcaption>요청 하나에 작업 전체를 싣던 구조(왼쪽)와 작업 ID를 받고 진행률만 묻는 구조(오른쪽). 인원·진행 값은 예시.</figcaption>
+  </figure>
+
+  <h3>판단</h3>
+  <p>기다리는 요청 하나에 작업 전체를 싣는 구조 자체를 없애기로 했습니다. 서버가 진행 상황을 밀어 주는 WebSocket도 검토했지만, 에이전트가 단순한 HTTP 리스너라 실시간 연결 계층을 새로 얹는 비용에 비해 얻는 게 적다고 보고 폴링을 택했습니다.</p>
+
+  <h3>바꾼 순서</h3>
+  <ul>
+    <li><b>2024.12 분할</b> — 헬퍼가 처리한 만큼의 결과와 남은 명단을 돌려주고, 공무링크가 남은 명단으로 다시 호출합니다.</li>
+    <li><b>2025.04 작업 ID</b> — 헬퍼가 작업 ID를 발급해 백그라운드에서 처리하고, 화면은 2초 간격으로 진행률만 조회해 진행 막대로 보여 줍니다.</li>
+    <li><b>2026.09 모듈 분리</b> — 진행률 추적을 별도 DLL 모듈로 분리했습니다.</li>
+  </ul>
+
+  <h3>결과</h3>
+  <p>150명 이상 일괄 처리도 끊김 없이 운영되고 있습니다. 사용자는 기다리는 동안 몇 명째 처리 중인지 볼 수 있습니다.</p>
+</section>
+
+<!-- 딸깍 -->
+<section class="case" id="ddalkkak">
+  <p class="kicker">개인 프로젝트 · 2026.07 ~ 현재</p>
+  <h2>딸깍: AI와 만든 퍼즐의 답이 정말 하나인지 검증하는 장치</h2>
+  <dl class="summary">
+    <dt>무엇</dt><dd>숨은 규칙을 찾는 두뇌 퍼즐 웹게임. 회사 밖에서 서비스를 처음부터 운영까지 해 보려고 만들었습니다</dd>
+    <dt>개발 방식</dt><dd>Claude Code로 개발하면서, AI가 낸 결과를 검증하는 장치를 함께 만들었습니다</dd>
+    <dt>기술</dt><dd>SvelteKit (Svelte 5) · TypeScript · Cloudflare Pages · Vitest</dd>
+    <dt>규모</dt><dd>문제 357개, 게임 로직·문제은행 무결성 테스트 271건</dd>
+    <dt>코드</dt><dd><a href="https://github.com/dalgeom/ddalkkak">https://github.com/dalgeom/ddalkkak</a></dd>
+  </dl>
+
+  <h3>문제</h3>
+  <p>규칙을 찾는 퍼즐은, 예시를 모두 설명하면서 다른 답을 내는 규칙이 하나라도 있으면 망가집니다. 검수 에이전트를 만들기 전에 들어간 문제 330개는 이런 반례 검사를 받은 적이 없었고, 8일 사이에 나온 오류 7건(사용자 지적 3건, 자체 검산 4건)이 모두 그 안에서 나왔습니다.</p>
+
+  <h3>만든 장치</h3>
+  <ul>
+    <li><b>문제 설계 명세</b> — 규칙이 하나로만 설명되는지, 첫 가설을 깨는 예시가 있는지 같은 기준을 문서로 정리했습니다.</li>
+    <li><b>검수 에이전트</b> — 이 기준으로 문제 후보를 반려합니다. 처음에는 "대안 규칙이 있으면 반려"라는 한 문장이었는데 아무것도 잡지 못해, 실제로 걸린 유형(더 단순한 성질로도 설명되는지, 사전에 있는 낱말인지, 해설이 순환논증인지 등)으로 쪼갰습니다.</li>
+    <li><b>규칙 공격 검사기</b> — 숫자형 문제의 예시를 수천 종의 대안 규칙으로 공격해, 공식 답과 다른 답을 내는 규칙을 찾습니다.</li>
+  </ul>
+
+  <h3>잡아낸 예</h3>
+  <p>문제 181개를 다시 검수해 20건을 찾아냈습니다. 그중 19건은 바로 고쳤고, 1건은 그날 출제 중이라 다음 날로 미뤘습니다. 시소 문제는 예시 그림이 물리와 반대로 그려져 있었습니다. 좌표로 모멘트를 계산해 보니 왼쪽 24 : 오른쪽 12로 왼쪽이 내려가야 했는데, 그림은 오른쪽이 내려가 있었습니다. 원칙은 <b>정답은 바꾸지 않고 예시·그림·해설만 고쳐 답이 하나가 되게 하는 것</b>입니다.</p>
+
+  <h3>한계</h3>
+  <p>검사기는 문제에 오류가 없다는 증명이 아니라 반례 찾기입니다. '반례 없음'은 준비한 규칙 목록으로 깨지 못했다는 뜻일 뿐이라, 스크립트 첫머리에 그렇게 적어 두었습니다.</p>
+</section>
+
+<!-- AI 활용 노트 -->
+<section class="case" id="ai">
+  <p class="kicker">AI 활용 노트</p>
+  <h2>AI에게 맡긴 결과를 어떻게 확인하는가</h2>
+  <p>2024년 말부터 ChatGPT에 질문하고 코드는 직접 옮겨 쓰는 보조 방식으로 AI를 썼고, 2026년 초부터는 Claude Code로 개발합니다. 사례 1과 사례 2의 2차 대응은 Claude Code로 구현했고, 사례 2의 1차 대응과 사례 3의 1·2단계는 그 전에 한 작업입니다.</p>
+
+  <h3>1. 결과를 실물로 확인한다</h3>
+  <p>근태 규칙 수정(사례 1)은 테스트 통과로 끝내지 않고, 운영 데이터에서 잘못 계산되던 날이 모두 정상이 되는지 대조했습니다. 공무링크의 Playwright 회귀 테스트는 2026년 9월에 137건에서 225건으로 늘렸습니다.</p>
+
+  <h3>2. 만든 쪽이 스스로 통과시키지 못하게 한다</h3>
+  <p>AI 에이전트의 역할을 나눠, 코드를 고치는 역할과 완료를 판정하는 역할을 분리했습니다. 누구도 자기가 만든 것을 자기가 통과시킬 수 없게 하는 것이 목적입니다.</p>
+
+  <h3>3. 거짓 통과에서 배운 것</h3>
+  <p>기능이 전혀 동작하지 않는데 테스트 7개가 모두 통과한 일이 있었습니다. 계획·코드·테스트가 같은 가정 하나에서 나와, 세 번 검증한 것처럼 보였지만 같은 오답을 세 번 적은 것이었습니다. 이후 판정 기준을 "통과했다"에서 "무엇을 실제로 실행했나"로 바꾸고, 변경을 되돌리면 테스트가 실패하는지 확인하는 <b>되돌림 시험</b>을 넣었습니다.</p>
+
+  <h3>4. 도구도 의심한다</h3>
+  <p>오류가 155건인데 성공으로 끝나는 타입 검사, 여러 줄에 걸친 SQL을 놓치는 검색처럼 도구가 조용히 틀린 사례를 실측값으로 기록해 두고, 검증할 때 그 기록을 먼저 봅니다.</p>
+</section>
+
+<!-- 그 외 -->
+<section class="case" id="etc">
+  <p class="kicker">그 외 맡은 제품</p>
+  <h2>(주)비즈웍스 · 2023.06 ~ 재직 중</h2>
+  <ul>
+    <li><b>공무링크</b> (2023.08 ~) — 설치형 데스크톱 프로그램을 웹으로 전환한 회사 주력 제품. 초기 구조부터 맡아 동료와 2인 개발 체제로 운영하고 있습니다. 가입 사업장 450곳 이상, 4대보험 사무대행기관 10곳.</li>
+    <li><b>공무헬퍼</b> (2024.06 ~) — 토탈서비스 일용직 근로내용확인신고, 공사 현장의 보험 개시·변경·하수급인 신고, 건강·연금 EDI 가입·신고·고지서 수집 자동화.</li>
+    <li><b>현장링크</b> (2024.02 ~) — 건설 일용직 근로자용 모바일 앱. 첫 커밋부터 참여. NFC·QR 출퇴근, 급여명세서 조회와 푸시 알림, 전자 근로계약.</li>
+    <li><b>PayREST</b> (2025.09 ~) — 사내 공용 결제 서버. 키움페이 결제 연동, 포인트 충전·차감 이력, 다른 제품이 붙을 수 있는 OpenAPI 스펙.</li>
+    <li><b>보수총액신고</b> (2026.01 ~ 03) — 동료가 만든 초기 골격을 넘겨받아 7단계 신고 화면으로 완성·출시. 두 달간 사업장 1,026곳의 신고를 처리했습니다.</li>
+  </ul>
+  <p class="aside">기간·역할·수치는 이력서와 같습니다. 이력서는 지원 시 함께 제출합니다.</p>
+</section>
+
+<footer>
+  임현진 · <a href="mailto:hyun7219@naver.com">hyun7219@naver.com</a> · <a href="https://github.com/dalgeom">https://github.com/dalgeom</a> · 2026.09 기준
+</footer>
 
 </div>
-
 </body>
 </html>
